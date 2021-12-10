@@ -5,7 +5,7 @@ excerpt: "Using ML for art"
 modified: 12/10/2021, 15:35:15
 category: blog
 ---
-With the rise of GANs humans are able to generate photorealistic images based of existing source material. With these developments, generating art using AI has been on the rise. Even on the NFT market I've recently seen projects advertising with the fact that they generate art [ref] (https://opensea.io/collection/-subtraction-). With this in mind, I want to explore how we can advance the generation of art with GANs and other ConvNet based methods. Instead of generating photorealistic images, I'd rather investigate how to incite creativity in ConvNet based methods, and how we can implement other AI methods to augment our creativity.
+With the rise of GANs humans are able to generate photorealistic images based of existing source material. With these developments, generating art using AI has been on the rise. Even on the NFT market I've recently seen projects advertising with the fact that they generate art [ref](https://opensea.io/collection/-subtraction-). With this in mind, I want to explore how we can advance the generation of art with GANs and other ConvNet based methods. Instead of generating photorealistic images, I'd rather investigate how to incite creativity in ConvNet based methods, and how we can implement other AI methods to augment our creativity.
 
 ## What I did
 
