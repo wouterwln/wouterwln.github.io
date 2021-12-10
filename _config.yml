@@ -2,14 +2,14 @@
 
 title: Wouter Nuijten
 locale: nl-nl
-logo: wouter_square.JPG
+logo: 
 
 # Enter the following platform usernames if you would like for them to appear on your site.
 owner:
   name: Wouter Nuijten
-  avatar: bio-photo.jpg
+  avatar: wouter_square.JPG
   bio: "Graduate student Data Science in Engineering"
-  email: #emailaddress
+  email: wouternuijten@gmail.com
   # Do not include the @ symbol in your Twitter username
   twitter: #username
   linkedin: #username
