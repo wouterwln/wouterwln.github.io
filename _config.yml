@@ -1,19 +1,19 @@
 # Site wide configuration
 
-title: Site Title
-locale: en_US
+title: Wouter Nuijten
+locale: nl-nl
 logo: # filename of a logo image that has been placed into your images directory
 
 # Enter the following platform usernames if you would like for them to appear on your site.
 owner:
-  name: Your Name
+  name: Wouter Nuijten
   avatar: bio-photo.jpg
-  bio: "A brief description of yourself."
+  bio: "Graduate student Data Science in Engineering"
   email: #emailaddress
   # Do not include the @ symbol in your Twitter username
   twitter: #username
   linkedin: #username
-  github: #username
+  github: wouterwln
   orcid: # ID Number (ex. 0000-0000-0000-0000)
   researchgate: #username
   mendeley: #username
@@ -21,7 +21,7 @@ owner:
     plus: #username
     analytics:
     verify:
-    scholar: #id
+    scholar: wCu4lj8AAAAJ&hl
   facebook: #username
   instagram: #username
   bing-verify:
