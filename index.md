@@ -5,12 +5,8 @@ menutitle: Home
 menuorder: 1
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+I am an MSc. student Data Science in Engineering primarily interested in applying and developing Machine Learning techniques to solve problems that do not fit a classical Machine Learning formulation. Because of this, I am currently graduating at the Machine Learning for Scientific Discovery group at the Eindhoven University of Technology. 
 ## Current Interests and Projects:
 
-- Lorem ipsum dolor sit amet
-- Lorem ipsum dolor sit amet
-- DLorem ipsum dolor sit amet
-- Lorem ipsum dolor sit amet
-- Lorem ipsum dolor sit amet
+- Graph Node Classification using Graph Neural Networks (MSc. Thesis project, https://vlamen.github.io/mscrunning/cern/)
+- Creating art with aid of Convolutional Neural Networks

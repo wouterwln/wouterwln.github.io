@@ -1,72 +1,25 @@
 ---
 layout: resume
-menuorder: 3
+menuorder: 2
 menutitle: Resume
 ---
 ## Currently
 
-Current Position Description
+Graduate Student MSc. Data Science in Engineering
 
 ## Education
 
-`1990 - 1994`
-__University Name__
-Degree Awarded
+`2019 - Present`
+__Eindhoven University of Technology__
+Data Science in Engineering, MSc. Running GPA 9.0/10
 
-`1995 - 1997`
-__University Name__
-Degree Awarded 
-
-## Awards
-
-`2012`
-Name of Award, Organization 
+`2016 - 2019`
+__Eindhoven University of Technology__
+Data Science, BSc. GPA 8.0/10
 
 ## Publications
 
-<!-- A list is also available [online](https://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
-
-### Journals
-
-`1994`
-Article Title, Journal Title
-
-`1994`
-Article Title, Journal Title
-
-### Books
-
-`1994`
-Book Title, Journal Title
-
-`1994`
-Book Title, Journal Title
-
-
-## Presentations
-
-`1994`
-Presentation Title, Conference, <a href="https://MyWebsite.tld/presentation1">Link to Presentation</a>
-
-
-## Occupation
-
-`Current`
-__Current Job Title__, Current Employer 
-
-- Task
-- Task
-
-`1994-1996`
-__Current Job Title__, Current Employer 
-
-- Task
-- Task
-
-
-
-<!-- ### Footer
-
-Last updated: May 2013 -->
+van den Wildenberg, Y., Nuijten, W. W., & Papapetrou, O. (2021). Easy Spark. In EDBT/ICDT Workshops.
+Burch, Michael, et al. "Finding the outliers in scanpath data." Proceedings of the 11th ACM Symposium on Eye Tracking Research & Applications. 2019.
 
 
