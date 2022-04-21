@@ -9,7 +9,7 @@ With the rise of GANs humans are able to generate photorealistic images based of
 
 ## What I did
 
-I selected source material (abstract art images in the public domain) and trained a GAN (architecture and training method resembled [StyleGAN2-ADA](https://arxiv.org/abs/2006.06676) by Nvidia) to generate new images. To illustrate that we can combine AI methods to aid in every stage of the art creation process, I generated 64x64 images and pushed them through an upscaling ConvNet to produce 256x256 images. These upscaled images are aesthetically significantly more pleasing, meaning that artists can use this technique to augment their creativity. I'll be offering these artworks as NFT's on OpenSea to see if people like this project and to explore the NFT market.
+I selected source material (abstract art images in the public domain) and trained a GAN (architecture and training method resembled [StyleGAN2-ADA](https://arxiv.org/abs/2006.06676) by Nvidia) to generate new images. To illustrate that we can combine AI methods to aid in every stage of the art creation process, I generated 64x64 images and pushed them through an upscaling ConvNet to produce 256x256 images. These upscaled images are aesthetically significantly more pleasing, meaning that artists can use this technique to augment their creativity.
 ## What I still want to do
 
 - Fully train a [StyleGAN3](https://arxiv.org/abs/2106.12423) model (new architecture by Nvidia) on portrait paintings to generate photorealistic images of oil paintings.
@@ -18,4 +18,4 @@ I selected source material (abstract art images in the public domain) and traine
 
 ## What's keeping me from doing that
 
-Unfortunately, money. Training a GAN is computationally intensive and with the high GPU prices nowadays I can't afford an industry standard GPU to realize this stuff. Maybe my NFT collection will fund this project, we'll see where it goes ;).
+Unfortunately, money. Training a GAN is computationally intensive and with the high GPU prices nowadays I can't afford an industry standard GPU to realize this stuff.
