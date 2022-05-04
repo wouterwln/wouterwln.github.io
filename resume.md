@@ -5,17 +5,17 @@ menutitle: Resume
 ---
 ## Currently
 
-Graduate Student MSc. Data Science in Engineering
+Graduated MSc. student looking for a PhD position, part-time Data Scientist at MakesPerfect
 
 ## Education
 
-`2019 - Present`
+`2019 - 2022`
 __Eindhoven University of Technology__
-Data Science in Engineering, MSc. Running GPA 9.0/10
+Data Science in Engineering, MSc. GPA 9.0/10, Judicium Cum Laude, Thesis grade 9.5
 
 `2016 - 2019`
 __Eindhoven University of Technology__
-Data Science, BSc. GPA 8.0/10
+Data Science, BSc. GPA 8.0/10, Judicium Cum Laude
 
 ## Publications
 
