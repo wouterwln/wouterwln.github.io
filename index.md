@@ -5,7 +5,7 @@ menutitle: Home
 menuorder: 1
 ---
 
-I am a graduated MSc. student Data Science in Engineering primarily interested in the theory of learning. Because of this, I am graduated at the Machine Learning for Scientific Discovery group at the Eindhoven University of Technology and am currently looking for a PhD position in the field of Machine Learning.
+I am a graduated MSc. student Data Science in Engineering primarily interested in the theory of learning. Because of this, I graduated at the Machine Learning for Scientific Discovery group at the Eindhoven University of Technology and am starting a PhD project at [BIASlab](https://biaslab.github.io) in October.
 
 As an amateur football and futsal player, I am especially intrigued by the application of Machine Learning and other data-driven techniques in the world of sports.  
 
