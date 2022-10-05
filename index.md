@@ -5,7 +5,7 @@ menutitle: Home
 menuorder: 1
 ---
 
-I am a graduated MSc. student Data Science in Engineering primarily interested in the theory of learning. Because of this, I graduated at the Machine Learning for Scientific Discovery group at the Eindhoven University of Technology and am starting a PhD project at [BIASlab](https://biaslab.github.io) in October.
+I am a Ph.D. student at [BIASlab](https://biaslab.github.io) primarily interested in the theory of learning. My Ph.D. project is concerned with transfering Free Energy Principle-based design from an academic neuroscientific interest to a method of engineering real-time learning systems, in particular in the context of situated design of augmented hearing reality algorithms.
 
 As an amateur football and futsal player, I am especially intrigued by the application of Machine Learning and other data-driven techniques in the world of sports.  
 
