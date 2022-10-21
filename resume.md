@@ -5,7 +5,12 @@ menutitle: Resume
 ---
 ## Currently
 
-Graduated MSc. student looking for a PhD position, part-time Data Scientist at MakesPerfect
+PhD candidate Bayesian Machine Learning at Eindhoven University of Technology. 
+
+## Experience
+`2020 - present`
+__MakesPerfect__
+Co-founder and Co-CEO of MakesPerfect, merging Data Science and sport at a.o. [KNVB](https://www.knvb.nl).
 
 ## Education
 
