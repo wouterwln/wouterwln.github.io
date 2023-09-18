@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RxEnvironments.jl, a Julia package for managing control environments
-excerpt: "RxEnvironments"
+title: RxEnvironments.jl
+excerpt: "A Julia package for designing Active Inference environments"
 modified: 18/9/2023, 15:35:17
 category: blog
 ---
