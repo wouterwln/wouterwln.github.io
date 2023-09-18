@@ -2,7 +2,7 @@
 layout: post
 title: Automating Model Comparison in Factor Graphs
 authors: Bart van Erp, Wouter W.L. Nuijten, Thijs van de Laar, Bert de Vries
-excerpt: Ylaise van den Wildenberg, Wouter W.L. Nuijten, Odysseas Papapetrou et al. Easy Spark.
+excerpt: Bart van Erp, Wouter W.L. Nuijten, Thijs van de Laar, Bert de Vries
 modified: 09/06/2023, 15:01:24
 tags: [bayesian inference, model comparison, factor graphs]
 comments: false

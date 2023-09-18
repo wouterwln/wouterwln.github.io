@@ -2,7 +2,7 @@
 layout: post
 title: Finding the outliers in scanpath data
 authors: Michael Burch, Ayush Kumar, Klaus Mueller, Titus Kervezee, Wouter Nuijten, Rens Oostenbach, Lucas Peeters, Gijs Smit
-excerpt: Michael Burch et al. Finding the outliers in scanpath data
+excerpt: Michael Burch, Ayush Kumar, Klaus Mueller, Titus Kervezee, Wouter Nuijten, Rens Oostenbach, Lucas Peeters, Gijs Smit
 modified: 25/06/2019, 9:00:24
 tags: [visualization]
 comments: false

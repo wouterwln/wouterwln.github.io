@@ -2,7 +2,7 @@
 layout: post
 title: Easy Spark.
 authors: Ylaise van den Wildenberg, Wouter W.L. Nuijten, Odysseas Papapetrou
-excerpt: Ylaise van den Wildenberg, Wouter W.L. Nuijten, Odysseas Papapetrou et al. Easy Spark.
+excerpt: Ylaise van den Wildenberg, Wouter W.L. Nuijten, Odysseas Papapetrou 
 modified: 01/05/2021, 9:00:24
 tags: [visualization, data engineering, gui]
 comments: false
