@@ -3,8 +3,8 @@ layout: post
 title: Node Classification in Random Trees
 authors: Wouter W. L. Nuijten, Vlado Menkovski
 excerpt: Wouter W. L. Nuijten, Vlado Menkovski
-modified: 14/04/2023, 13:17:56
-tags: [visualization]
+modified: 14/04/2024, 13:17:56
+tags: [graph neural networks, node classification, markov networks]
 comments: false
 category: publication
 ---
