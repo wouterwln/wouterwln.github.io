@@ -3,13 +3,14 @@ layout: post
 title: Online Structure Learning with Dirichlet Processes through Message Passing
 authors: Bart van Erp, Wouter W. L. Nuijten, Bert de Vries
 excerpt: Bart van Erp, Wouter W. L. Nuijten, Bert de Vries
+date: 10/09/2024, 16:00:00
 modified: 10/09/2024, 16:00:00
 tags: [structure learning, dirichlet processes, message passing]
 comments: false
 category: publication
 ---
 
-**Authors:  Wouter W. L. Nuijten, Vlado Menkovski**
+**Authors:  Bart van Erp, Wouter W. L. Nuijten, Bert de Vries**
 
 
 
