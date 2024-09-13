@@ -13,5 +13,5 @@ As an amateur football and futsal player at [Totelos](https://www.totelos.nl/t2)
 
 - Bayesian Machine Learning and Active Inference, designing bio-inspired real-time learning intelligent agents using Free Energy Minimisation.
 - Julia programming language and its ecosystem, especially the development of an Active Inference ecosystem in Julia (see [RxEnvironments.jl](https://github.com/biaslab/RxEnvironments.jl) and [RxInfer.jl](https://www.rxinfer.ml))
-- Usage of gradient-based methods in the analysis and improvement of sport performance. Co-owner of MakesPerfect, where I try to integrate state-of-the-art learning techniques in the world of sports.
+- Usage of gradient-based methods in the analysis and improvement of sport performance. Co-owner of [MoreMovement](https://moremovement.nl/), where I try to integrate state-of-the-art learning techniques in the world of sports.
 
