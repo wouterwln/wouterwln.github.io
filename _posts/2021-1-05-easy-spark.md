@@ -15,4 +15,6 @@ category: publication
 
 Today’s data deluge calls for novel, scalable data handling and processing solutions. Spark has emerged as a popular distributed in-memory computing engine for processing and analysing a large amount of data in parallel. However, the way parallel processing pipelines are designed is fundamentally different from traditional programming techniques, and hence most programmers are either unable to start using Spark, or are not utilising Spark to the maximum of its potential. This study describes an easier entry point into Spark. We design and implement a GUI that allows any programmer with knowledge of a standard programming language (eg, Python or Java) to write Spark applications effortlessly and interactively, and to submit and execute them to large clusters.
 
+**Published at: [EDBT (International Conference on Extending Database Technology) Workshops 2021](https://edbticdt2021.cs.ucy.ac.cy/index.html)
+
 **[pdf available](http://star.informatik.rwth-aachen.de/Publications/CEUR-WS/Vol-2841/SIMPLIFY_7.pdf)**
