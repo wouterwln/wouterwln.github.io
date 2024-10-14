@@ -17,4 +17,4 @@ Active Inference is a framework that emphasizes the interaction between agents a
 
 **Published at: [IWAI (International Workshop on Active Inference) 2024](https://iwaiworkshop.github.io/)**
 
-<!-- **[pdf available on ArXiv](https://arxiv.org/abs/2311.12167)** -->
+**[pdf available on ArXiv](https://arxiv.org/abs/2409.11087)**
