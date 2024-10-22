@@ -7,6 +7,9 @@ menutitle: Resume
 `2022 - present`
 __Eindhoven University of Technology__
 PhD candidate Bayesian Machine Learning and hierarchical Active Inference. 
+`2024 - present`
+__MoreMovement__
+Co-founder at [MoreMovement](https://moremovement.nl), bringing professional movement analysis into the hands of everyone.
 
 ## Experience
 `2020 - present`
