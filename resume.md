@@ -12,6 +12,10 @@ PhD candidate Bayesian Machine Learning and hierarchical Active Inference.
 __MoreMovement__
 Co-founder at [MoreMovement](https://moremovement.nl), bringing professional movement analysis into the hands of everyone.
 
+`2024 - present`
+__Lazy Dynamics__
+Senior Machine Learning Engineer at Lazy Dynamics, developing biologically inspired AI agents.
+
 ## Experience
 `2020 - present`
 __MakesPerfect__
