@@ -42,10 +42,7 @@
       "score": "9.0/10",
       "honors": "Judicium Cum Laude",
       "department": "Department of Mathematics and Computer Science",
-      "courses": [
-        "Cum Laude",
-        "Thesis on Graph Neural Networks in particle shower reconstruction"
-      ]
+      "courses": ["Cum Laude", "Thesis on Graph Neural Networks in particle shower reconstruction"]
     },
     {
       "institution": "Eindhoven University of Technology & Tilburg University",
@@ -56,10 +53,7 @@
       "score": "8.0/10",
       "honors": "Judicium Cum Laude",
       "department": "Department of Mathematics and Computer Science, Tilburg Law School",
-      "courses": [
-        "Cum Laude",
-        "Minor in Business Analytics and Operations Research"
-      ]
+      "courses": ["Cum Laude", "Minor in Business Analytics and Operations Research"]
     }
   ],
 
@@ -69,10 +63,7 @@
       "position": "Senior Machine Learning Engineer",
       "startDate": "2024-11",
       "endDate": "Present",
-      "highlights": [
-        "Experience in pre-seed startup environment",
-        "Fast-iterating, product oriented design"
-      ]
+      "highlights": ["Experience in pre-seed startup environment", "Fast-iterating, product oriented design"]
     },
     {
       "name": "MakesPerfect",
@@ -160,30 +151,17 @@
     {
       "name": "Bayesian Inference",
       "level": "Expert",
-      "keywords": [
-        "Bayesian Probability theory",
-        "Variational Inference",
-        "Control theory"
-      ]
+      "keywords": ["Bayesian Probability theory", "Variational Inference", "Control theory"]
     },
     {
       "name": "Programming",
       "level": "Expert",
-      "keywords": [
-        "Python",
-        "Julia",
-        "PyTorch"
-      ]
+      "keywords": ["Python", "Julia", "PyTorch"]
     },
     {
       "name": "Machine Learning",
       "level": "Expert",
-      "keywords": [
-        "Deep Learning",
-        "Traditional ML techniques",
-        "Graph Neural Networks",
-        "Bayesian Machine Learning"
-      ]
+      "keywords": ["Deep Learning", "Traditional ML techniques", "Graph Neural Networks", "Bayesian Machine Learning"]
     }
   ],
   "languages": [

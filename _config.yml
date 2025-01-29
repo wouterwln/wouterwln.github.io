@@ -4,20 +4,20 @@
 
 title: Wouter Nuijten # the website title (if blank, full name will be used instead)
 first_name: Wouter
-middle_name: 
+middle_name:
 last_name: Nuijten
-contact_note: 
+contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   PhD student at Eindhoven University of Technology
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: active-inference, bayesian-inference, probabilistic-programming, reactive-programming, julia, python, football, sports, betting, machine-learning, artificial-intelligence # add your own keywords or leave empty
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.) 
+lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🎓 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://wouterwln.github.io # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -40,7 +40,7 @@ repo_trophies:
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: false 
+rss_icon: false
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -81,7 +81,6 @@ openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX
 google_site_verification: # your google-site-verification ID (Google Search Console)
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
-
 # -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
@@ -90,7 +89,7 @@ collections:
   news:
     defaults:
       layout: post
-    output: false 
+    output: false
     permalink: /:collection/:title/
   projects:
     output: true
