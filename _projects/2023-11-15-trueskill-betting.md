@@ -5,7 +5,6 @@ description: Improving TrueSkill for football match prediction
 img: assets/img/projects/cointoss.gif
 importance: 3
 category: fun
-# github: https://github.com/wouterwln/football-trueskill
 ---
 
 ## Project Overview

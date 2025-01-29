@@ -13,15 +13,6 @@ profile:
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
-announcements:
-  enabled: false # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
 ---
 
 I am a PhD student at [BIASlab](https://biaslab.github.io), primarily interested in the theory of learning. My PhD project concerns transferring Free Energy Principle-based design from an academic neuroscientific interest to a method of engineering real-time learning systems, in particular in the context of situated design of augmented hearing reality algorithms. Specifically, I focus on developing hierarchically organized Active Inference agents that can plan over different timespans. At [Lazy Dynamics](https://lazydynamics.com/), I try to bring these ideas to practice by developing biologically inspired AI agents.
