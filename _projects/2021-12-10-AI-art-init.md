@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: distill
 title: AI Art Generation
 description: Exploring creative AI techniques for art generation
 img: assets/img/projects/nft.avif

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: distill
 title: "Johnny Cash: A Bayesian Football Betting Bot"
 description: Improving TrueSkill for football match prediction
 img: assets/img/projects/cointoss.gif

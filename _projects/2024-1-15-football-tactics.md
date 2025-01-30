@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: distill
 title: Learning Real-Life Football Tactics
 description: Using Active Inference to learn optimal football strategies
 img: assets/img/projects/football.gif

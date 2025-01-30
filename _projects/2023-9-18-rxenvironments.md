@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: distill
 title: RxEnvironments.jl
 description: A Julia package for designing Active Inference environments
 img: assets/img/projects/rxenvs.png
@@ -24,7 +24,7 @@ bibliography: 2023-9-18-rxenvironments.bib
 
 ## Advantages Over OpenAI Gym
 
-While OpenAI Gym is more established, RxEnvironments offers several unique advantages:
+While OpenAI Gym <d-cite key="openaigym"></d-cite> is more established, RxEnvironments offers several unique advantages:
 
 - Native support for multi-agent scenarios
 - Reactive programming paradigm for more flexible control

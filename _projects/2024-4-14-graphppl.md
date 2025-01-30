@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: distill
 title: RxInfer.jl 3.0 powered by GraphPPL
 description: Nested Model specification with next-gen PPL
 img: assets/img/projects/rxinfer.svg
@@ -16,4 +16,4 @@ bibliography: 2024-4-14-graphppl.bib
 
 ## RxInfer.jl 3.0
 
-`RxInfer.jl` is a Julia package containing an inference engine for factor graphs. With the release of `GraphPPL.jl`, we have decided to integrate the nested model specification of `GraphPPL.jl` into `RxInfer.jl`. This renews the user-interface of `RxInfer.jl` and allows for a more modular and reusable way of specifying models. The renewed `RxInfer.jl` is now powered by `GraphPPL.jl` and model specification is therefore more concise and powerful.
+`RxInfer.jl` <d-cite key="bagaev2023rxinfer"></d-cite> is a Julia package containing an inference engine for factor graphs. With the release of `GraphPPL.jl`, we have decided to integrate the nested model specification of `GraphPPL.jl` into `RxInfer.jl`. This renews the user-interface of `RxInfer.jl` and allows for a more modular and reusable way of specifying models. The renewed `RxInfer.jl` is now powered by `GraphPPL.jl` and model specification is therefore more concise and powerful.

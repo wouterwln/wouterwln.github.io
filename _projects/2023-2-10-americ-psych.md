@@ -1,16 +1,16 @@
 ---
-layout: page
+layout: distill
 title: American Psycho Business Card Generator
 description: Web app to generate business cards in the style of American Psycho
 img: assets/img/projects/card.svg
 importance: 4
 category: fun
-website: https://americpsychcard.github.io
+arxiv: https://americpsychcard.github.io
 ---
 
 ## Project Overview
 
-A web application that allows users to generate their own business card in the style of Patrick Bateman's from the movie American Psycho. The project combines full-stack development with a fun, pop-culture reference, resulting in a practical tool that produces high-quality, printable business cards.
+A [web application](https://americpsychcard.github.io) that allows users to generate their own business card in the style of Patrick Bateman's from the movie American Psycho. The project combines full-stack development with a fun, pop-culture reference, resulting in a practical tool that produces high-quality, printable business cards.
 
 ## Technical Implementation
 
