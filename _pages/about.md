@@ -13,6 +13,7 @@ profile:
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
+
 Hi, I'm Wouter, I am a computer scientist interested in artificial intelligence. I am particularly interested in teaching machines to learn like humans do.
 
 In my research at [BIASlab](https://biaslab.github.io), I try to apply Bayesian optimal reasoning to a control setting, and making these solutions efficient, tractable and scalable. In particular, I am interested in designing scalable Active Inference methods such that they can be used in real-time learning systems. In order to do this, I am a core developer of [RxInfer.jl](https://www.rxinfer.ml), which is a Julia package for Bayesian Inference, and I built [RxEnvironments.jl](https://github.com/biaslab/RxEnvironments.jl), which is a Julia package for creating environments for Active Inference agents. At [Lazy Dynamics](https://lazydynamics.com/), I try to bring these ideas to practice in an industrial setting.
@@ -22,4 +23,5 @@ In my free time, I play football and futsal at [Totelos](https://www.totelos.nl/
 I try to merge my interest for AI and sports at [MoreMovement](https://moremovement.nl/), where we try to integrate state-of-the-art learning techniques in a sports environment.
 
 ## Contact
+
 You can contact me at w.w.l.nuijten@tue.nl
