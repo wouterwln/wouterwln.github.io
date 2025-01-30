@@ -13,13 +13,13 @@ profile:
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
+Hi, I'm Wouter, I am a computer scientist interested in artificial intelligence. I am particularly interested in teaching machines to learn like humans do.
 
-I am a PhD student at [BIASlab](https://biaslab.github.io), primarily interested in the theory of learning. My PhD project concerns transferring Free Energy Principle-based design from an academic neuroscientific interest to a method of engineering real-time learning systems, in particular in the context of situated design of augmented hearing reality algorithms. Specifically, I focus on developing hierarchically organized Active Inference agents that can plan over different timespans. At [Lazy Dynamics](https://lazydynamics.com/), I try to bring these ideas to practice by developing biologically inspired AI agents.
+In my research at [BIASlab](https://biaslab.github.io), I try to apply Bayesian optimal reasoning to a control setting, and making these solutions efficient, tractable and scalable. In particular, I am interested in designing scalable Active Inference methods such that they can be used in real-time learning systems. In order to do this, I am a core developer of [RxInfer.jl](https://www.rxinfer.ml), which is a Julia package for Bayesian Inference, and I built [RxEnvironments.jl](https://github.com/biaslab/RxEnvironments.jl), which is a Julia package for creating environments for Active Inference agents. At [Lazy Dynamics](https://lazydynamics.com/), I try to bring these ideas to practice in an industrial setting.
 
-As an amateur football and futsal player at [Totelos](https://www.totelos.nl/t2), I am especially intrigued by the application of Machine Learning and other data-driven techniques in sports.
+In my free time, I play football and futsal at [Totelos](https://www.totelos.nl/t2), which you have probably noticed if you have seen me present anywhere, and I really like to cook. When I'm not on the field, with friends or in the kitchen, I enjoy collecting records, watching films, and playing piano. I have a weak spot for Nintendo games and I love to read.
 
-## Current Interests and Projects:
+I try to merge my interest for AI and sports at [MoreMovement](https://moremovement.nl/), where we try to integrate state-of-the-art learning techniques in a sports environment.
 
-- Bayesian Machine Learning and Active Inference, designing bio-inspired real-time learning intelligent agents using Free Energy Minimisation.
-- Julia programming language and its ecosystem, especially the development of an Active Inference ecosystem in Julia (see [RxEnvironments.jl](https://github.com/biaslab/RxEnvironments.jl) and [RxInfer.jl](https://www.rxinfer.ml))
-- Usage of gradient-based methods in the analysis and improvement of sport performance. Co-owner of [MoreMovement](https://moremovement.nl/), where I try to integrate state-of-the-art learning techniques in the world of sports.
+## Contact
+You can contact me at w.w.l.nuijten@tue.nl
