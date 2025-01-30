@@ -5,6 +5,7 @@ description: Exploring creative AI techniques for art generation
 img: assets/img/projects/nft.avif
 importance: 2
 category: fun
+bibliography: 2021-12-10-AI-art-init.bib
 ---
 
 ## Project Overview
@@ -13,11 +14,11 @@ With the rise of GANs, humans are able to generate photorealistic images based o
 
 ## Technical Implementation
 
-I selected source material (abstract art images in the public domain) and trained a GAN (architecture and training method resembled [StyleGAN2-ADA](https://arxiv.org/abs/2006.06676) by Nvidia) to generate new images. To illustrate that we can combine AI methods to aid in every stage of the art creation process, I generated 64x64 images and pushed them through an upscaling ConvNet to produce 256x256 images. These upscaled images are aesthetically significantly more pleasing, meaning that artists can use this technique to augment their creativity.
+I selected source material (abstract art images in the public domain) and trained a GAN (architecture and training method resembled [StyleGAN2-ADA](https://arxiv.org/abs/2006.06676) <d-cite key="karras2020training"></d-cite> by Nvidia) to generate new images. To illustrate that we can combine AI methods to aid in every stage of the art creation process, I generated 64x64 images and pushed them through an upscaling ConvNet to produce 256x256 images. These upscaled images are aesthetically significantly more pleasing, meaning that artists can use this technique to augment their creativity.
 
 ## Future Vision
 
-- Train a [StyleGAN3](https://arxiv.org/abs/2106.12423) model on portrait paintings
+- Train a [StyleGAN3](https://arxiv.org/abs/2106.12423)<d-cite key="karras2021alias"></d-cite> model on portrait paintings
 - Create animations through latent space interpolation
 - Develop a platform for non-technical users to train GANs on their inspirational image collections
 - Establish AI art as a legitimate new form of artistic expression

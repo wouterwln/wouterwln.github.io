@@ -3,13 +3,14 @@ layout: page
 title: "Johnny Cash: A Bayesian Football Betting Bot"
 description: Improving TrueSkill for football match prediction
 img: assets/img/projects/cointoss.gif
-importance: 3
+importance: 1
 category: fun
+bibliography: 2023-11-15-trueskill-betting.bib
 ---
 
 ## Project Overview
 
-A fun experiment in applying Bayesian inference to football match prediction. I extended Microsoft's TrueSkill™ model, originally designed for Xbox matchmaking, to predict football match outcomes. By incorporating additional factors like home advantage and team form, and player availability.
+A fun experiment in applying Bayesian inference to football match prediction. I extended Microsoft's TrueSkill <d-cite key="herbrich2007trueskill"></d-cite> model, originally designed for Xbox matchmaking, to predict football match outcomes. By incorporating additional factors like home advantage and team form, and player availability.
 
 ## Technical Implementation
 

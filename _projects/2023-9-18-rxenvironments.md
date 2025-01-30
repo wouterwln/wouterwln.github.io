@@ -7,11 +7,12 @@ importance: 2
 category: work
 github: https://github.com/reactivebayes/rxenvironments.jl
 related_publications: true
+bibliography: 2023-9-18-rxenvironments.bib
 ---
 
 ## Project Overview
 
-`RxEnvironments.jl` is a Julia package containing all boilerplate code to create reactive environments for control. The package is designed with Active Inference in mind, and therefore models all interaction between agents and environments as communication through a Markov Blanket. Since this communication abstracts away from the actual implementation of agents and environments and instead only focuses on Markov Blankets, we support multi-agent environments out of the box.
+`RxEnvironments.jl` <d-cite key="nuijten2024reactive"></d-cite> is a Julia package containing all boilerplate code to create reactive environments for control. The package is designed with Active Inference in mind, and therefore models all interaction between agents and environments as communication through a Markov Blanket. Since this communication abstracts away from the actual implementation of agents and environments and instead only focuses on Markov Blankets, we support multi-agent environments out of the box.
 
 ## Key Features
 

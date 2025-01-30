@@ -6,7 +6,7 @@ subtitle: PhD student at Eindhoven University of Technology
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: wouter_n.jpg
   image_circular: true # crops the image to make it circular
   more_info:
 
