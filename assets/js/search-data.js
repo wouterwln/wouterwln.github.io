@@ -72,6 +72,11 @@ ninja.data = [{
           description: "Nested Model specification with next-gen PPL",
           section: "Projects",handler: () => {
               window.location.href = "/projects/graphppl/";
+            },},{id: "projects-gears-jl",
+          title: 'Gears.jl',
+          description: "A Julia package for fine-grained scheduling",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/gears/";
             },},{
         id: 'social-email',
         title: 'email',
