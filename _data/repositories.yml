@@ -7,3 +7,4 @@ github_repos:
   - reactivebayes/RxInfer.jl
   - reactivebayes/RxEnvironments.jl
   - reactivebayes/GraphPPL.jl
+  - lazydynamics/Gears.jl
