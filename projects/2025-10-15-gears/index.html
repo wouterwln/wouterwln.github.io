@@ -1,4 +1,21 @@
-<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Gears.jl | Wouter Nuijten </title> <meta name="author" content="Wouter Nuijten"> <meta name="description" content="A Julia package for fine-grained scheduling"> <meta name="keywords" content="active-inference, bayesian-inference, probabilistic-programming, reactive-programming, julia, python, football, sports, betting, machine-learning, artificial-intelligence"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Gears.jl | Wouter Nuijten </title> <meta name="author" content="Wouter Nuijten"> <meta name="description" content="A Julia package for fine-grained scheduling"> <meta name="keywords" content="active-inference, bayesian-inference, probabilistic-programming, reactive-programming, julia, python, football, sports, betting, machine-learning, artificial-intelligence"> <meta property="og:site_name" content="Wouter Nuijten"> <meta property="og:type" content="website"> <meta property="og:title" content="Wouter Nuijten | Gears.jl"> <meta property="og:url" content="https://wouterwln.github.io/projects/2025-10-15-gears/"> <meta property="og:description" content="A Julia package for fine-grained scheduling"> <meta property="og:image" content="https://wouterwln.github.io/assets/img/wouter_n.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Gears.jl"> <meta name="twitter:description" content="A Julia package for fine-grained scheduling"> <meta name="twitter:image" content="https://wouterwln.github.io/assets/img/wouter_n.jpg"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Wouter Nuijten"
+        },
+        "url": "https://wouterwln.github.io/projects/2025-10-15-gears/",
+        "@type": "WebSite",
+        "description": "A Julia package for fine-grained scheduling",
+        "headline": "Gears.jl",
+        
+        "sameAs": ["https://github.com/wouterwln","https://www.linkedin.com/in/wouter-nuijten-476830a6","https://orcid.org/0009-0007-0689-9300","https://scholar.google.com/citations?user=wCu4lj8AAAAJ","https://twitter.com/wouterwln"],
+        
+        "name": "Wouter Nuijten",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
@@ -27,7 +44,7 @@
               ]
             }
           }
-    </script> </d-front-matter> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Wouter Nuijten </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">Repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Resume </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="post distill"> <d-title> <h1>Gears.jl</h1> <p>A Julia package for fine-grained scheduling</p> </d-title> <d-article> <h2 id="what-is-gearsjl">What is Gears.jl?</h2> <p>Gears.jl is a Julia package that brings precise timing control to simulation environments through fine-grained job scheduling. Whether you’re building real-time simulations, robotics systems, or event-driven applications, Gears provides the temporal precision you need with an elegant, intuitive API.</p> <p>The package shines in its ability to handle multiple types of jobs simultaneously: timed jobs that execute at regular intervals, ASAP jobs that run as soon as possible, and event-driven jobs that respond to data arriving on channels. What makes Gears particularly powerful is its flexible time management system—you can work with machine time for real-world applications or controllable virtual time for simulations, all while supporting multi-threaded parallel execution. The scheduler intelligently manages job execution, ensuring that tasks run exactly when they should, whether that’s every 200 milliseconds or triggered by specific events.</p> <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">Gears</span>
+    </script> </d-front-matter> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Wouter Nuijten </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Resume </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="post distill"> <d-title> <h1>Gears.jl</h1> <p>A Julia package for fine-grained scheduling</p> </d-title> <d-article> <h2 id="what-is-gearsjl">What is Gears.jl?</h2> <p>Gears.jl is a Julia package that brings precise timing control to simulation environments through fine-grained job scheduling. Whether you’re building real-time simulations, robotics systems, or event-driven applications, Gears provides the temporal precision you need with an elegant, intuitive API.</p> <p>The package shines in its ability to handle multiple types of jobs simultaneously: timed jobs that execute at regular intervals, ASAP jobs that run as soon as possible, and event-driven jobs that respond to data arriving on channels. What makes Gears particularly powerful is its flexible time management system: you can work with machine time for real-world applications or controllable virtual time for simulations, all while supporting multi-threaded parallel execution. The scheduler intelligently manages job execution, ensuring that tasks run exactly when they should, whether that’s every 200 milliseconds or triggered by specific events.</p> <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">Gears</span>
 
 <span class="c"># Schedule a task every 200ms</span>
 <span class="n">every</span><span class="x">(</span><span class="mi">200</span><span class="n">ms</span><span class="x">)</span> <span class="k">do</span> <span class="n">dt</span>
@@ -77,13 +94,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-repositories",
-          title: "Repositories",
-          description: "Overview of open source projects I have been a part of.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-resume",
           title: "Resume",
           description: "",
@@ -118,11 +128,6 @@ ninja.data = [{
           description: "Simulating player attendance for optimal team size",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2021-7-12-team-sim/";
-            },},{id: "projects-ai-art-generation",
-          title: 'AI Art Generation',
-          description: "Exploring creative AI techniques for art generation",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2021-12-10-AI-art-init/";
             },},{id: "projects-american-psycho-business-card-generator",
           title: 'American Psycho Business Card Generator',
           description: "Web app to generate business cards in the style of American Psycho",
@@ -143,9 +148,9 @@ ninja.data = [{
           description: "Using Active Inference to learn optimal football strategies",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2024-1-15-football-tactics/";
-            },},{id: "projects-rxinfer-jl-3-0-powered-by-graphppl",
-          title: 'RxInfer.jl 3.0 powered by GraphPPL',
-          description: "Nested Model specification with next-gen PPL",
+            },},{id: "projects-graphppl-jl",
+          title: 'GraphPPL.jl',
+          description: "The probabilistic programming language powering RxInfer.jl",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2024-4-14-graphppl/";
             },},{id: "projects-gears-jl",
