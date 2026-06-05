@@ -20,8 +20,6 @@ In my research at [BIASlab](https://biaslab.github.io), I try to apply Bayesian 
 
 In my free time, I play football and futsal at [Totelos](https://www.totelos.nl/t2), which you have probably noticed if you have seen me present anywhere, and I really like to cook. When I'm not on the pitch, with friends or in the kitchen, I enjoy collecting records, watching films, and playing piano. I have a weak spot for Nintendo games and I love to read.
 
-I try to merge my interest for AI and sports at [MoreMovement](https://moremovement.nl/), where we try to integrate state-of-the-art learning techniques in a sports environment.
-
 ## Contact
 
 You can contact me at w.w.l.nuijten@tue.nl
