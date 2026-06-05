@@ -65,7 +65,6 @@
       "startDate": "2024-11",
       "endDate": "Present",
       "highlights": [
-        "Bringing the RxInfer.jl ecosystem to production in industrial applications",
         "Built Gears.jl, a Julia package for fine-grained job scheduling in simulations and real-time systems",
         "Fast-iterating, product-oriented work in a pre-seed startup environment"
       ]
