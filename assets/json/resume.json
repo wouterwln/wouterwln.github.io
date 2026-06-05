@@ -4,10 +4,8 @@
     "image": "prof_pic.jpg",
     "email": "w.w.l.nuijten@tue.nl",
     "url": "https://wouterwln.github.io/",
-    "summary": "PhD Candidate in Bayesian Machine Learning and Active Inference at Eindhoven University of Technology",
+    "summary": "Final-year PhD candidate in Bayesian Machine Learning at Eindhoven University of Technology and Senior Machine Learning Engineer at Lazy Dynamics. I work on Active Inference as variational inference and build the open-source tooling (RxInfer.jl ecosystem) to make it run in real time.",
     "location": {
-      "address": "de Groene Loper 19",
-      "postalCode": "5612 AP",
       "city": "Eindhoven",
       "countryCode": "NL",
       "region": "Noord-Brabant"
@@ -27,11 +25,15 @@
   "education": [
     {
       "institution": "Eindhoven University of Technology",
-      "area": "Bayesian Machine Learning for Audio Processing",
-      "studyType": "PhD Bayesian Machine Learning and Active Inference",
+      "area": "Variational Realizations of Active Inference",
+      "studyType": "PhD Bayesian Machine Learning",
       "startDate": "2022-10",
       "endDate": "Present",
-      "department": "Department of Electrical Engineering"
+      "department": "Department of Electrical Engineering, BIASlab",
+      "courses": [
+        "Research on Active Inference as variational inference: scalable, message passing-based planning and decision-making",
+        "Core developer of RxInfer.jl; author of GraphPPL.jl and RxEnvironments.jl"
+      ]
     },
     {
       "institution": "Eindhoven University of Technology",
@@ -62,7 +64,11 @@
       "position": "Senior Machine Learning Engineer",
       "startDate": "2024-11",
       "endDate": "Present",
-      "highlights": ["Experience in pre-seed startup environment", "Fast-iterating, product oriented design"]
+      "highlights": [
+        "Bringing the RxInfer.jl ecosystem to production in industrial applications",
+        "Built Gears.jl, a Julia package for fine-grained job scheduling in simulations and real-time systems",
+        "Fast-iterating, product-oriented work in a pre-seed startup environment"
+      ]
     },
     {
       "name": "MakesPerfect",
@@ -77,35 +83,12 @@
     },
     {
       "name": "Eindhoven University of Technology",
-      "position": "Study Ambassador",
-      "startDate": "2017-09",
-      "endDate": "2021-07",
-      "highlights": [
-        "Providing aspiring students with information about the Data Science study programme",
-        "Promote the Data Science study programme on open days",
-        "Responsible for general presentations on open days"
-      ]
-    },
-    {
-      "name": "Eindhoven University of Technology",
       "position": "Student Assistant",
       "startDate": "2018-09",
       "endDate": "2019-07",
       "highlights": [
         "Assisting Full Professors in their teaching of several courses",
-        "Facilitating tutorial sessions for students",
-        "Valuable lessons learned in teaching and group management"
-      ]
-    },
-    {
-      "name": "Albert Heijn",
-      "position": "Team Lead",
-      "startDate": "2014-10",
-      "endDate": "2018-05",
-      "highlights": [
-        "Managing a team of 10-20 employees while meeting daily targets",
-        "Maintaining a close relationship with managers, suppliers and customers",
-        "Valuable lessons learned in time-management and team leadership"
+        "Facilitating tutorial sessions for students"
       ]
     }
   ],

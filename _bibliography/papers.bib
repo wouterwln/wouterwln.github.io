@@ -10,7 +10,9 @@
   arxiv           = {2606.04935},
   doi             = {10.48550/arXiv.2606.04935},
   preview         = {nuijten_what_2026.png},
-  additional_info = {Accepted at the Conference on Uncertainty in Artificial Intelligence (UAI) 2026}
+  selected        = {true},
+  additional_info = {Accepted at the Conference on Uncertainty in Artificial Intelligence (UAI) 2026},
+  abstract        = {Active inference casts decision-making as inference, with the Expected Free Energy (EFE) unifying goal-directed and information-seeking behavior. Recent work showed that EFE minimization can be written as Variational Free Energy (VFE) minimization on a generative model augmented with epistemic priors. We prove that the VFE of the augmented model can be rewritten as the VFE of the predictive model plus explicit entropy-correction terms, making the EFE contribution transparent. We then show that proper EFE-based planning requires combining these epistemic corrections with a planning correction that turns marginal inference into policy optimization, yielding a full variational characterization of EFE-based planning. This clarifies which corrections are needed for cross-entropy planning and for full EFE-based planning. The same entropy-corrected formulation leads to a detailed message-passing scheme for EFE-based planning together with simpler ablations. Experiments on three grid-world environments show that the planning correction already helps when observations are decisive, whereas the additional observation-side epistemic corrections matter most when observations are merely suggestive.}
 }
 
 @article{nuijten_expected_2026,
@@ -21,6 +23,7 @@
   year        = 2026,
   journal     = {Transactions on Machine Learning Research},
   issn        = {2835-8856},
+  selected    = {true},
   preview     = {nuijten_expected_2026.png}
 }
 
@@ -51,7 +54,8 @@
   eprint            = {2511.18955},
   archiveprefix     = {arXiv},
   google_scholar_id = {WF5omc3nYNoC},
-  arxiv             = {2511.18955}
+  arxiv             = {2511.18955},
+  abstract          = {Automated decision-making under uncertainty requires balancing exploitation and exploration. Classical methods treat these separately using heuristics, while Active Inference unifies them through Expected Free Energy (EFE) minimization. However, EFE minimization is computationally expensive, limiting scalability. We build on recent theory recasting EFE minimization as variational inference, formally unifying it with Planning-as-Inference and showing the epistemic drive as a unique entropic contribution. Our main contribution is a novel message-passing scheme for this unified objective, enabling scalable Active Inference in factored-state MDPs and overcoming high-dimensional planning intractability.}
 }
 
 @inproceedings{lukashchuk_quotient_2025,
@@ -83,7 +87,8 @@
   preview           = {minigrid.gif},
   award             = {The paper was awarded the best technical paper award at the International Workshop on Active Inference 2025},
   award_name        = {Marr Best Technical Paper Award},
-  arxiv             = {2508.02197}
+  arxiv             = {2508.02197},
+  abstract          = {We present a message passing approach to Expected Free Energy (EFE) minimization on factor graphs, based on the theory introduced in arXiv:2504.14898. By reformulating EFE minimization as Variational Free Energy minimization with epistemic priors, we transform a combinatorial search problem into a tractable inference problem solvable through standard variational techniques. Applying our message passing method to factorized state-space models enables efficient policy inference. We evaluate our method on environments with epistemic uncertainty: a stochastic gridworld and a partially observable Minigrid task. Agents using our approach consistently outperform conventional KL-control agents on these tasks, showing more robust planning and efficient exploration under uncertainty. In the stochastic gridworld environment, EFE-minimizing agents avoid risky paths, while in the partially observable minigrid setting, they conduct more systematic information-seeking. This approach bridges active inference theory with practical implementations, providing empirical evidence for the efficiency of epistemic priors in artificial agents.}
 }
 
 @inproceedings{kouw_message_2025,
@@ -101,7 +106,8 @@
   arxiv             = {2509.25482},
   selected          = {false},
   preview           = {marxefe.gif},
-  google_scholar_id = {YsMSGLbcyi4C}
+  google_scholar_id = {YsMSGLbcyi4C},
+  abstract          = {We present the design of an autoregressive active inference agent in the form of message passing on a factor graph. Expected free energy is derived and distributed across a planning graph. The proposed agent is validated on a robot navigation task, demonstrating exploration and exploitation in a continuous-valued observation space with bounded continuous-valued actions. Compared to a classical optimal controller, the agent modulates action based on predictive uncertainty, arriving later but with a better model of the robot's dynamics.}
 }
 
 @misc{devries_expected_2025,
@@ -121,7 +127,8 @@
   url               = {https://arxiv.org/abs/2504.14898},
   google_scholar_id = {Tyk-4Ss8FVUC},
   selected          = {false},
-  preview           = {vries_2025_expected.png}
+  preview           = {vries_2025_expected.png},
+  abstract          = {We address the problem of planning under uncertainty, where an agent must choose actions that not only achieve desired outcomes but also reduce uncertainty. Traditional methods often treat exploration and exploitation as separate objectives, lacking a unified inferential foundation. Active inference, grounded in the Free Energy Principle, provides such a foundation by minimizing Expected Free Energy (EFE), a cost function that combines utility with epistemic drives, such as ambiguity resolution and novelty seeking. However, the computational burden of EFE minimization had remained a significant obstacle to its scalability. In this paper, we show that EFE-based planning arises naturally from minimizing a variational free energy functional on a generative model augmented with preference and epistemic priors. This result reinforces theoretical consistency with the Free Energy Principle by casting planning under uncertainty itself as a form of variational inference. Our formulation yields policies that jointly support goal achievement and information gain, while incorporating a complexity term that accounts for bounded computational resources. This unifying framework connects and extends existing methods, enabling scalable, resource-aware implementations of active inference agents.}
 }
 
 @inproceedings{lukashchuk_riemannian_2024,
@@ -133,7 +140,8 @@
   year              = {2024},
   google_scholar_id = {IjCSPb-OGe4C},
   month             = {12},
-  html              = {https://openreview.net/pdf?id=QBbc0L5Zpb}
+  html              = {https://openreview.net/pdf?id=QBbc0L5Zpb},
+  abstract          = {We introduce Riemannian Black Box Variational Inference (RBBVI) for scenarios lacking gradient information of the model with respect to its parameters. Our method constrains posterior marginals to exponential families, optimizing variational free energy using Riemannian geometry and gradients of the log-partition function. It excels with black-box or nondifferentiable models, where popular methods fail. We demonstrate efficacy by inferring parameters from the SIR model and tuning neural network learning rates. The results show competitive performance with gradient-based (NUTS) and gradient-free (Latent Slice Sampling) methods, achieving better coverage and matching Bayesian optimization with fewer evaluations. RBBVI extends variational inference to settings where model gradients are unavailable, improving efficiency and flexibility for real-world applications.}
 }
 
 @article{nuijten_graphppljl_2024,
@@ -152,6 +160,7 @@
   preview           = {rxinfer.svg},
   publisher         = {MDPI},
   selected          = {true},
+  code              = {https://github.com/reactivebayes/GraphPPL.jl},
   google_scholar_id = {zYLM7Y9cAGgC},
   html              = {https://pmc.ncbi.nlm.nih.gov/articles/PMC11592988/}
 }
@@ -170,11 +179,13 @@
   doi               = {10.48550/arXiv.2409.11087},
   organization      = {Springer},
   selected          = {true},
+  code              = {https://github.com/reactivebayes/RxEnvironments.jl},
   google_scholar_id = {qjMakFHDy7sC},
   preview           = {football.gif},
   award             = {RxEnvironments was awarded the best presentation award at the International Workshop on Active Inference 2024},
   award_name        = {Best Presentation},
-  arxiv             = {2409.11087}
+  arxiv             = {2409.11087},
+  abstract          = {Active Inference is a framework that emphasizes the interaction between agents and their environment. While the framework has seen significant advancements in the development of agents, the environmental models are often borrowed from reinforcement learning problems, which may not fully capture the complexity of multi-agent interactions or allow complex, conditional communication. This paper introduces Reactive Environments, a comprehensive paradigm that facilitates complex multi-agent communication. In this paradigm, both agents and environments are defined as entities encapsulated by boundaries with interfaces. This setup facilitates a robust framework for communication in nonequilibrium-Steady-State systems, allowing for complex interactions and information exchange. We present a Julia package RxEnvironments.jl, which is a specific implementation of Reactive Environments, where we utilize a Reactive Programming style for efficient implementation. The flexibility of this paradigm is demonstrated through its application to several complex, multi-agent environments. These case studies highlight the potential of Reactive Environments in modeling sophisticated systems of interacting agents.}
 }
 
 
@@ -207,7 +218,8 @@
   google_scholar_id = {2osOgNQ5qMEC},
   month             = {5},
   preview           = {particleshower.png},
-  arxiv             = {2311.12167}
+  arxiv             = {2311.12167},
+  abstract          = {We propose a method for the classification of objects that are structured as random trees. Our aim is to model a distribution over the node label assignments in settings where the tree data structure is associated with node attributes (typically high dimensional embeddings). The tree topology is not predetermined and none of the label assignments are present during inference. Other methods that produce a distribution over node label assignment in trees (or more generally in graphs) either assume conditional independence of the label assignment, operate on a fixed graph topology, or require part of the node labels to be observed. Our method defines a Markov Network with the corresponding topology of the random tree and an associated Gibbs distribution. We parameterize the Gibbs distribution with a Graph Neural Network that operates on the random tree and the node embeddings. This allows us to estimate the likelihood of node assignments for a given random tree and use MCMC to sample from the distribution of node assignments. We evaluate our method on the tasks of node classification in trees on the Stanford Sentiment Treebank dataset. Our method outperforms the baselines on this dataset, demonstrating its effectiveness for modeling joint distributions of node labels in random trees.}
 }
 
 @article{vanerp_automating_2023,
@@ -226,7 +238,8 @@
   publisher         = {MDPI},
   google_scholar_id = {9yKSN-GCB0IC},
   html              = {https://www.mdpi.com/1099-4300/25/8/1138},
-  arxiv             = {2306.05965}
+  arxiv             = {2306.05965},
+  abstract          = {Bayesian state and parameter estimation have been automated effectively in a variety of probabilistic programming languages. The process of model comparison on the other hand, which still requires error-prone and time-consuming manual derivations, is often overlooked despite its importance. This paper efficiently automates Bayesian model averaging, selection, and combination by message passing on a Forney-style factor graph with a custom mixture node. Parameter and state inference, and model comparison can then be executed simultaneously using message passing with scale factors. This approach shortens the model design cycle and allows for the straightforward extension to hierarchical and temporal model priors to accommodate for modeling complicated time-varying processes.}
 }
 
 @inproceedings{vandenwildenberg_easy_2021,

@@ -15,3 +15,7 @@ node_modules/
 output/playwright/
 test-results/
 vendor
+
+# personal reference library, not site content
+_bibliography/references.bib
+.claude/scheduled_tasks.lock

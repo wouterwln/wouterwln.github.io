@@ -5,7 +5,6 @@ description: Using Active Inference to learn optimal football strategies
 img: assets/img/projects/football.gif
 importance: 1
 category: work
-recruiting: true
 ---
 
 ## Project Overview
@@ -37,30 +36,11 @@ This research project aims to apply Active Inference principles to learn and opt
 - Player development through personalized feedback
 - Team composition optimization
 
-## Student Opportunities
-
-We are currently recruiting Master's students interested in:
-
-- Machine Learning
-- Active Inference
-- Multi-agent Systems
-- Real-world AI Applications
-- Football
-
-Ideal candidates should have:
-
-- Strong programming skills (Julia/Python)
-- Interest in sports analytics
-- Background in machine learning or AI
-- Understanding of football tactics (playing experience is a plus)
-
 ## Current Status
 
-This is an ongoing research project where we collaborate with football clubs to validate our approaches. We're particularly interested in:
+This is an ongoing research project in which we collaborate with football clubs to validate our approaches. We're particularly interested in:
 
 - Developing new Active Inference models for team sports
 - Creating practical tools for coaches and analysts
 - Validating theoretical models with real-world data
 - Bridging the gap between AI research and sports practice
-
-Interested students can contact me for more information about thesis opportunities in this project.

@@ -31,11 +31,6 @@ While OpenAI Gym <d-cite key="openaigym"></d-cite> is more established, RxEnviro
 - Built specifically for Active Inference applications
 - Clean abstraction through Markov Blankets
 
-## Future Development
+## Project Status
 
-The project is actively maintained with new features being added regularly. Feature requests and contributions are managed through the [GitHub issues page](https://github.com/biaslab/rxenvironments.jl/issues). Users are encouraged to:
-
-- Submit feature requests
-- Report bugs
-- Contribute through pull requests
-- Suggest improvements
+The package is feature-complete and stable. It does what it was designed to do, and I use it as the simulation backbone for my Active Inference research. Bug reports and contributions are welcome through the [GitHub issues page](https://github.com/reactivebayes/rxenvironments.jl/issues).

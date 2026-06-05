@@ -2,23 +2,28 @@
 layout: about
 title: Home
 permalink: /
-subtitle: PhD student at Eindhoven University of Technology
+subtitle: PhD candidate in Bayesian Machine Learning at TU Eindhoven · Senior Machine Learning Engineer at Lazy Dynamics
 
 profile:
   align: right
   image: wouter_n.jpg
   image_circular: true # crops the image to make it circular
-  more_info:
+  more_info: >
+    <p>BIASlab, TU Eindhoven</p>
+    <p>Lazy Dynamics</p>
+    <p>Eindhoven, The Netherlands</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi, I'm Wouter, I am a computer scientist interested in artificial intelligence. I am particularly interested in teaching machines to learn like humans do.
+Hi, I'm Wouter. I'm a machine learning researcher and engineer working on Bayesian inference. In particular, I work on making Bayesian reasoning efficient, tractable, and scalable enough to run in real-time learning systems.
 
-In my research at [BIASlab](https://biaslab.github.io), I try to apply Bayesian optimal reasoning to a control setting, and making these solutions efficient, tractable and scalable. In particular, I am interested in designing scalable Active Inference methods such that they can be used in real-time learning systems. In order to do this, I am a core developer of [RxInfer.jl](https://www.rxinfer.com), which is a Julia package for Bayesian Inference, and I built [RxEnvironments.jl](https://github.com/biaslab/RxEnvironments.jl), which is a Julia package for creating environments for Active Inference agents. At [Lazy Dynamics](https://lazydynamics.com/), I try to bring these ideas to practice in an industrial setting.
+I'm in the final year of my PhD at [BIASlab](https://biaslab.github.io) (Eindhoven University of Technology), where my research centers on variational realizations of Active Inference: framing Active Inference as variational inference so that planning and decision-making can be solved with the same scalable message passing machinery as state estimation and learning.
 
-In my free time, I play football and futsal at [Totelos](https://www.totelos.nl/t2), which you have probably noticed if you have seen me present anywhere, and I really like to cook. When I'm not on the pitch, with friends or in the kitchen, I enjoy collecting records, watching films, and playing piano. I have a weak spot for Nintendo games and I love to read.
+I build the tools I research with. I am a core developer of [RxInfer.jl](https://www.rxinfer.com), an open-source Julia package for reactive Bayesian inference, where I designed and built [GraphPPL.jl](https://github.com/reactivebayes/GraphPPL.jl), the probabilistic programming language powering RxInfer's model specification. I also created [RxEnvironments.jl](https://github.com/reactivebayes/RxEnvironments.jl) for designing reactive multi-agent environments, and [Gears.jl](https://github.com/lazydynamics/Gears.jl) for fine-grained scheduling in simulation and real-time systems. As Senior Machine Learning Engineer at [Lazy Dynamics](https://lazydynamics.com/), I bring these methods to production in industrial settings.
+
+In my free time, I play football and futsal at [Totelos](https://www.totelos.nl/t2), and I really like to cook. When I'm not on the pitch or in the kitchen, I enjoy collecting records, watching films, and playing piano.
 
 ## Contact
 
