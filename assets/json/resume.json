@@ -4,7 +4,7 @@
     "image": "prof_pic.jpg",
     "email": "w.w.l.nuijten@tue.nl",
     "url": "https://wouterwln.github.io/",
-    "summary": "Final-year PhD candidate in Bayesian Machine Learning at Eindhoven University of Technology and Senior Machine Learning Engineer at Lazy Dynamics. I work on Active Inference as variational inference and build the open-source tooling (RxInfer.jl ecosystem) to make it run in real time.",
+    "summary": "PhD candidate in Bayesian Machine Learning at Eindhoven University of Technology and Senior Machine Learning Engineer at Lazy Dynamics. I work on Active Inference as variational inference, probabilistic programming, and real-time ML systems for decision-making under uncertainty.",
     "location": {
       "city": "Eindhoven",
       "countryCode": "NL",
@@ -44,7 +44,10 @@
       "score": "9.0/10",
       "honors": "Judicium Cum Laude",
       "department": "Department of Mathematics and Computer Science",
-      "courses": ["Cum Laude", "Thesis on Graph Neural Networks in particle shower reconstruction"]
+      "courses": [
+        "Cum Laude",
+        "Thesis on Graph Neural Networks in particle shower reconstruction"
+      ]
     },
     {
       "institution": "Eindhoven University of Technology & Tilburg University",
@@ -55,7 +58,31 @@
       "score": "8.0/10",
       "honors": "Judicium Cum Laude",
       "department": "Department of Mathematics and Computer Science, Tilburg Law School",
-      "courses": ["Cum Laude", "Minor in Business Analytics and Operations Research"]
+      "courses": [
+        "Cum Laude",
+        "Minor in Business Analytics and Operations Research"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "Expected Free Energy-Based Planning as Variational Inference",
+      "publisher": "Transactions on Machine Learning Research",
+      "releaseDate": "2026",
+      "summary": "First author."
+    },
+    {
+      "title": "What Type of Inference Is Active Inference?",
+      "publisher": "Conference on Uncertainty in Artificial Intelligence (UAI)",
+      "releaseDate": "2026",
+      "url": "https://arxiv.org/abs/2606.04935",
+      "summary": "First author."
+    },
+    {
+      "title": "The Quotient Bayesian Learning Rule",
+      "publisher": "Advances in Neural Information Processing Systems (NeurIPS)",
+      "releaseDate": "2025",
+      "summary": "Co-author."
     }
   ],
   "work": [
@@ -65,8 +92,9 @@
       "startDate": "2024-11",
       "endDate": "Present",
       "highlights": [
-        "Built Gears.jl, a Julia package for fine-grained job scheduling in simulations and real-time systems",
-        "Fast-iterating, product-oriented work in a pre-seed startup environment"
+        "Developed real-time ML and signal processing solutions with emphasis on low-latency inference, streaming data, and production-oriented constraints",
+        "Worked on SLAM and robotics inference systems inspired by iSAM2-style incremental smoothing and mapping",
+        "Designed probabilistic inference pipelines for dynamic systems, combining Bayesian modeling, factor graphs, and real-time implementation constraints",
       ]
     },
     {
@@ -85,7 +113,10 @@
       "position": "Student Assistant",
       "startDate": "2018-09",
       "endDate": "2019-07",
-      "highlights": ["Assisting Full Professors in their teaching of several courses", "Facilitating tutorial sessions for students"]
+      "highlights": [
+        "Assisting Full Professors in their teaching of several courses",
+        "Facilitating tutorial sessions for students"
+      ]
     }
   ],
   "volunteer": [
@@ -129,17 +160,32 @@
     {
       "name": "Bayesian Inference",
       "level": "Expert",
-      "keywords": ["Bayesian Probability theory", "Variational Inference", "Active Inference", "Control theory"]
+      "keywords": [
+        "Bayesian Probability theory",
+        "Variational Inference",
+        "Active Inference",
+        "Control theory"
+      ]
     },
     {
       "name": "Programming",
       "level": "Expert",
-      "keywords": ["Python", "Julia", "Reactive Programming", "Probabilistic Programming"]
+      "keywords": [
+        "Python",
+        "Julia",
+        "Reactive Programming",
+        "Probabilistic Programming"
+      ]
     },
     {
       "name": "Machine Learning",
       "level": "Expert",
-      "keywords": ["Bayesian Machine Learning", "Deep Learning", "Traditional ML techniques", "Graph Neural Networks"]
+      "keywords": [
+        "Bayesian Machine Learning",
+        "Deep Learning",
+        "Traditional ML techniques",
+        "Graph Neural Networks"
+      ]
     }
   ],
   "languages": [
