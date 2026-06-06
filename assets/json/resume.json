@@ -44,10 +44,7 @@
       "score": "9.0/10",
       "honors": "Judicium Cum Laude",
       "department": "Department of Mathematics and Computer Science",
-      "courses": [
-        "Cum Laude",
-        "Thesis on Graph Neural Networks in particle shower reconstruction"
-      ]
+      "courses": ["Cum Laude", "Thesis on Graph Neural Networks in particle shower reconstruction"]
     },
     {
       "institution": "Eindhoven University of Technology & Tilburg University",
@@ -58,10 +55,7 @@
       "score": "8.0/10",
       "honors": "Judicium Cum Laude",
       "department": "Department of Mathematics and Computer Science, Tilburg Law School",
-      "courses": [
-        "Cum Laude",
-        "Minor in Business Analytics and Operations Research"
-      ]
+      "courses": ["Cum Laude", "Minor in Business Analytics and Operations Research"]
     }
   ],
   "publications": [
@@ -94,7 +88,7 @@
       "highlights": [
         "Developed real-time ML and signal processing solutions with emphasis on low-latency inference, streaming data, and production-oriented constraints",
         "Worked on SLAM and robotics inference systems inspired by iSAM2-style incremental smoothing and mapping",
-        "Designed probabilistic inference pipelines for dynamic systems, combining Bayesian modeling, factor graphs, and real-time implementation constraints",
+        "Designed probabilistic inference pipelines for dynamic systems, combining Bayesian modeling, factor graphs, and real-time implementation constraints"
       ]
     },
     {
@@ -113,10 +107,7 @@
       "position": "Student Assistant",
       "startDate": "2018-09",
       "endDate": "2019-07",
-      "highlights": [
-        "Assisting Full Professors in their teaching of several courses",
-        "Facilitating tutorial sessions for students"
-      ]
+      "highlights": ["Assisting Full Professors in their teaching of several courses", "Facilitating tutorial sessions for students"]
     }
   ],
   "volunteer": [
@@ -160,32 +151,17 @@
     {
       "name": "Bayesian Inference",
       "level": "Expert",
-      "keywords": [
-        "Bayesian Probability theory",
-        "Variational Inference",
-        "Active Inference",
-        "Control theory"
-      ]
+      "keywords": ["Bayesian Probability theory", "Variational Inference", "Active Inference", "Control theory"]
     },
     {
       "name": "Programming",
       "level": "Expert",
-      "keywords": [
-        "Python",
-        "Julia",
-        "Reactive Programming",
-        "Probabilistic Programming"
-      ]
+      "keywords": ["Python", "Julia", "Reactive Programming", "Probabilistic Programming"]
     },
     {
       "name": "Machine Learning",
       "level": "Expert",
-      "keywords": [
-        "Bayesian Machine Learning",
-        "Deep Learning",
-        "Traditional ML techniques",
-        "Graph Neural Networks"
-      ]
+      "keywords": ["Bayesian Machine Learning", "Deep Learning", "Traditional ML techniques", "Graph Neural Networks"]
     }
   ],
   "languages": [
