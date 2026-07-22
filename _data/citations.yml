@@ -1,10 +1,10 @@
 metadata:
-  last_updated: '2026-06-07'
+  last_updated: '2026-07-22'
 papers:
   wCu4lj8AAAAJ:0EnyYjriUFMC:
     citations: 1
     title: A Message Passing Realization of Expected Free Energy Minimization
-    year: '2025'
+    year: '2026'
   wCu4lj8AAAAJ:2osOgNQ5qMEC:
     citations: 1
     title: Node classification in random trees
@@ -18,7 +18,7 @@ papers:
     title: Message passing-based inference in an autoregressive active inference agent
     year: '2025'
   wCu4lj8AAAAJ:Tyk-4Ss8FVUC:
-    citations: 10
+    citations: 9
     title: Expected free energy-based planning as variational inference
     year: '2025'
   wCu4lj8AAAAJ:UeHWp8X0CEIC:
@@ -40,6 +40,10 @@ papers:
   wCu4lj8AAAAJ:hqOjcs7Dif8C:
     citations: 0
     title: What Type of Inference is Active Inference?
+    year: '2026'
+  wCu4lj8AAAAJ:kNdYIx-mwKoC:
+    citations: 0
+    title: Expected Free Energy-based Planning as Variational Inference
     year: '2026'
   wCu4lj8AAAAJ:qjMakFHDy7sC:
     citations: 1
