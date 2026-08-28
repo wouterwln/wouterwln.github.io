@@ -65,6 +65,25 @@ New upstream workflows (`star-history.yml`, `update-screenshots.yml`, `release.y
 `broken-links.yml`) are all guarded by `if: github.repository == 'alshedivat/al-folio'`,
 so they stay inert here. Re-check that guard if a new workflow appears.
 
+### Workflows deliberately deleted from this fork
+
+**`.github/workflows/visual-regression.yml` is removed on purpose. Do not restore it.**
+
+It screenshot-diffs the site against a `v0.16.3` baseline worktree to catch CSS drift
+from upstream's v0-to-v1 Tailwind rewrite. That is useful in the template repo and
+meaningless here, for two independent reasons:
+
+1. It needs the `v0.16.3` tag, and this fork has no tags (`git push` does not push tags,
+   so none reached `origin`). The step failed with `fatal: invalid reference: v0.16.3`.
+2. Even with the tag, it diffs `/`, `/projects/`, `/publications/` and `/repositories/`
+   against upstream's v0.16.3 **demo content**. We deleted that content and have no
+   repositories page, so every route would mismatch on content rather than on styling.
+
+It only ever triggered on the automated Scholar-citations PRs, where it showed a red X.
+If a future merge reintroduces the file, delete it again. Keep `test/visual/` itself:
+`test/style_contract.js` requires that path to exist, and dropping it fails
+`unit-tests.yml`.
+
 ### Finally, verify
 
 ```sh
