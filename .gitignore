@@ -19,3 +19,7 @@ vendor
 # personal reference library, not site content
 _bibliography/references.bib
 .claude/scheduled_tasks.lock
+
+# Python bytecode from bin/ helper scripts
+__pycache__/
+*.pyc
