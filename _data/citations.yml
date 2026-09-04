@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-26'
+  last_updated: '2026-09-04'
 papers:
   wCu4lj8AAAAJ:0EnyYjriUFMC:
     citations: 4
@@ -82,6 +82,6 @@ papers:
     title: A Probabilistic Generative Model for Spectral Speech Enhancement
     year: '2026'
   wCu4lj8AAAAJ:zYLM7Y9cAGgC:
-    citations: 1
+    citations: 2
     title: 'GraphPPL. jl: A Probabilistic Programming Language for Graphical Models'
     year: '2024'
