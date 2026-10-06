@@ -23,7 +23,7 @@ I'm in the final year of my PhD at [BIASlab](https://biaslab.github.io) (Eindhov
 
 I build the tools I research with. I am a core developer of [RxInfer.jl](https://www.rxinfer.com), an open-source Julia package for reactive Bayesian inference, where I designed and built [GraphPPL.jl](https://github.com/reactivebayes/GraphPPL.jl), the probabilistic programming language powering RxInfer's model specification. I also created [RxEnvironments.jl](https://github.com/reactivebayes/RxEnvironments.jl) for designing reactive multi-agent environments. As Senior Machine Learning Engineer at [Lazy Dynamics](https://lazydynamics.com/), I work on real-time ML systems, including probabilistic inference pipelines for streaming, low-latency dynamic systems.
 
-In my free time, I play football and futsal at [Totelos](https://www.totelos.nl/t2), and I really like to cook. When I'm not on the pitch or in the kitchen, I enjoy collecting records, watching films, and playing piano.
+In my free time, I play football and futsal, and I really like to cook. When I'm not on the pitch or in the kitchen, I enjoy collecting records, watching films, and playing piano.
 
 ## Contact
 

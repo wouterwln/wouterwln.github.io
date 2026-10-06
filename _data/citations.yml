@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-26'
+  last_updated: '2026-10-06'
 papers:
   wCu4lj8AAAAJ:0EnyYjriUFMC:
     citations: 4
@@ -22,7 +22,7 @@ papers:
     title: Message passing-based inference in an autoregressive active inference agent
     year: '2025'
   wCu4lj8AAAAJ:Tyk-4Ss8FVUC:
-    citations: 12
+    citations: 16
     title: Expected free energy-based planning as variational inference
     year: '2025'
   wCu4lj8AAAAJ:ULOm3_A8WrAC:
@@ -34,7 +34,7 @@ papers:
     title: Online Structure Learning with Dirichlet Processes through Message Passing
     year: '2024'
   wCu4lj8AAAAJ:WF5omc3nYNoC:
-    citations: 0
+    citations: 1
     title: Active Inference is a Subtype of Variational Inference
     year: '2025'
   wCu4lj8AAAAJ:YOwf2qJgpHMC:
@@ -58,7 +58,7 @@ papers:
     title: What Type of Inference is Active Inference?
     year: '2026'
   wCu4lj8AAAAJ:kNdYIx-mwKoC:
-    citations: 1
+    citations: 2
     title: Expected Free Energy-based Planning as Variational Inference
     year: '2026'
   wCu4lj8AAAAJ:qjMakFHDy7sC:
@@ -82,6 +82,6 @@ papers:
     title: A Probabilistic Generative Model for Spectral Speech Enhancement
     year: '2026'
   wCu4lj8AAAAJ:zYLM7Y9cAGgC:
-    citations: 1
+    citations: 2
     title: 'GraphPPL. jl: A Probabilistic Programming Language for Graphical Models'
     year: '2024'
