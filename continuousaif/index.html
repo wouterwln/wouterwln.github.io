@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expected free energy, planned by gradient descent</title>
+<meta name="description" content="An interactive explainer of an active inference agent that plans by gradient descent on the expected free energy with a Bayesian last-layer world model.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<nav class="top"><a href="/">Wouter Nuijten</a></nav>
+
+<header class="col">
+  <p class="kicker">Interactive explainer</p>
+  <h1>Expected free energy, planned by gradient descent</h1>
+  <p class="lede">Put an agent in front of a pendulum it has never seen. It does not know the physics, it does not know what its sensors report, and the only signal it gets is a preference for observations in which the pendulum is upright. Hanging at the bottom, every action looks equally bad. To get anywhere, the agent has to try actions that do not pay off yet, learn a model from what happens, and find out where in that model the goal lies.</p>
+  <p class="lede">This page describes an agent that does this by planning with the expected free energy, the objective of active inference. The objective puts the task and the value of learning something new into one quantity, with no weight to tune between them. The agent's world model is a generic neural network with a Bayesian last layer, which makes the value of new information cheap to compute, and the agent minimises the objective by gradient descent through rollouts it imagines with its model. All figures are recorded from this agent.</p>
+  <p class="byline">Wouter W. L. Nuijten</p>
+</header>
+
+<section class="col" id="behavior">
+  <h2>The agent on three control problems</h2>
+  <p>We ran the agent on three classic control problems: swinging a pendulum upright, driving an underpowered car up a hill, and swinging up a pole on a cart. On all three the motor is too weak to go straight to the goal, so the agent has to build up energy first by swinging or rocking. It starts every run with randomly initialised networks and no data. The only task information it gets is a preference that is flat everywhere except near the goal (pendulum and pole upright, car at the flag), so until the agent has seen the goal once, the preference gives no hint of which way to go. All settings are the same on the three problems except the episode length.</p>
+  <p>Each row shows episodes 1, 5 and 10 of one run, drawn from the true states of the system. In episode 1 the model is untrained and the behaviour looks random. By episode 10 the agent swings the pendulum and the pole up and holds them there, and it drives the car to the flag. The toggle switches to the same agent with the information-gain terms removed from its objective, so that only the preference is left. That agent stops moving on the pendulum and the car after a few episodes, because nothing in what is left of its objective tells it where the goal is. On the cart-pole it still learns, because the light pole swings through upright even under random actions.</p>
+  <figure class="widget wide" id="bh-widget">
+    <div class="controls">
+      <span class="lab">objective</span>
+      <button data-cond="all" class="on">full $F_{\text{EFE}}$</button>
+      <button data-cond="pref">without the epistemic terms</button>
+    </div>
+    <div class="controls">
+      <button class="bh-play primary">Play</button>
+      <button class="bh-restart">Restart</button>
+      <span class="lab">speed</span><button data-speed="1">1×</button><button data-speed="2" class="on">2×</button><button data-speed="4">4×</button>
+      <input type="range" class="bh-t" min="0" max="399" value="0" aria-label="time step">
+      <span class="bh-tlab lab"></span>
+    </div>
+    <div class="bh-grid"></div>
+    <figcaption>Green: the goal region. 1× is real time for the pendulum and the cart-pole.</figcaption>
+  </figure>
+</section>
+
+<section class="col" id="model">
+  <h2>A generic model of the world</h2>
+  <p>Everything the agent knows about its environment comes in through observations $y_t$, and everything it does goes out through actions $u_t$. Between the two, the agent keeps a model. We give it the most general kind of model that still has some structure: a state-space model. A hidden state $x_t$ summarises whatever about the system matters for the future. It changes when the agent acts, and it produces the observations the agent sees:</p>
+  <div class="eq">$$
+  \begin{aligned}
+  p(x_t \mid x_{t-1}, u_t, \theta) &= \mathcal N\big(x_t;\; x_{t-1} + f_\theta(x_{t-1}, u_t),\; \Sigma_x\big), \\
+  p(y_t \mid x_t, \theta) &= \mathcal N\big(y_t;\; g_\theta(x_t),\; \operatorname{diag}(\sigma_y^2)\big).
+  \end{aligned}
+  $$</div>
+  <p>The function $f_\theta$ says how the state moves under an action, and $g_\theta$ says what the sensors report in a given state. Over a horizon of $T$ steps, starting from the agent's current belief $p(x_0)$ about the state, the model is</p>
+  <div class="eq">$$
+  p(\boldsymbol y, \boldsymbol x \mid \boldsymbol u, \theta) = p(x_0) \prod_{t=1}^{T} p(x_t \mid x_{t-1}, u_t, \theta)\, p(y_t \mid x_t, \theta).
+  $$</div>
+  <p>Nothing here is specific to a pendulum. We do not tell the agent what the state means; it only gets a latent space with as many dimensions as its observations, and it has to learn what to put there. The same goes for $f_\theta$ and $g_\theta$: we want one agent that works on many problems, so these functions have to be able to represent whatever dynamics and sensors the agent runs into. That calls for a rich, generic function approximator, and the obvious choice is a neural network. Neural networks can approximate any continuous function (<a href="https://doi.org/10.1016/0893-6080(89)90020-8">Hornik, Stinchcombe and White, 1989</a>), and they learn useful representations from data on their own.</p>
+  <p>They have one problem for our purpose. A network trained to a single set of weights gives one prediction with no error bar, and away from the data it was trained on it is often confidently wrong. An agent that has to decide what to explore needs to know where its model is unsure. The next section shows how we add it.</p>
+</section>
+
+<section class="col" id="bll">
+  <h2>Uncertainty from a Bayesian last layer</h2>
+  <p>A fully Bayesian neural network would keep a belief over all of its weights, but that is expensive, and the agent has to evaluate its model many thousands of times per action. We make only the last layer Bayesian. A network computes features $\phi(x_{t-1}, u_t)$, and the dynamics are linear in those features with uncertain weights: $f_\theta(x_{t-1}, u_t) = W_x^\top \phi(x_{t-1}, u_t)$. The observation model is built the same way, $g_\theta(x_t) = W_y^\top \psi(x_t)$, and the uncertain parameters are the last-layer weights $\theta = (W_x, W_y)$.</p>
+  <p>The payoff is that the weights can be integrated out exactly. With a Gaussian belief over $W_x$ (mean $M_x$, row covariance $S_x$), the prediction of the next state, averaged over everything the agent does not know about the weights, is again Gaussian:</p>
+  <div class="eq">$$
+  \begin{aligned}
+  q(x_t \mid x_{t-1}, u_t) &= \int p(x_t \mid x_{t-1}, u_t, \theta)\, q(\theta)\, \mathrm d\theta \\
+  &= \mathcal N\big(x_t;\; x_{t-1} + M_x^\top \phi,\; (1 + \phi^\top S_x \phi)\, \Sigma_x\big).
+  \end{aligned}
+  $$</div>
+  <p>The covariance $S_x = (\alpha I + \Phi^\top\Phi)^{-1}$ summarises the data, where $\Phi$ stacks the features of all transitions seen so far. Each new transition adds its features to $\Phi$ and shrinks $S_x$ in the directions those features point. The number $\phi^\top S_x \phi$ is therefore small where the features point in directions the data cover, and large where they do not, and it widens the prediction by exactly that much.</p>
+  <p>From here it is a short step to the quantity the agent will use to explore: the information gain. It measures how much the agent expects to learn about the weights by seeing the next state. In general it is the spread of the prediction minus the spread that the noise alone would cause. With a Bayesian last layer it has a closed form, one quadratic form per prediction:</p>
+  <div class="eq">$$
+  \begin{aligned}
+  \htmlClass{t-dyn}{\mathrm{I}(x_t; \theta \mid x_{t-1}, u_t)} &\htmlClass{t-dyn}{{}= \tfrac{d_x}{2} \log\big(1 + \phi^\top S_x \phi\big)}, \\
+  \htmlClass{t-obs}{\mathrm{I}(y_t; \theta \mid x_t)} &\htmlClass{t-obs}{{}= \tfrac{1}{2} \textstyle\sum_j \log\big(1 + \psi^\top S_y \psi / \sigma_{y,j}^2\big)}.
+  \end{aligned}
+  $$</div>
+  <p>The first is the information gain about the dynamics, the second about the observation model. The toy below shows the idea in one dimension. Click the first button a few times: each click observes the hidden function where the information gain is largest, which is also where the predictive band is widest, and the band closes there.</p>
+
+  <figure class="widget" id="bll-widget">
+    <div class="controls">
+      <button class="bll-max primary">Observe where the information gain is largest</button>
+      <button class="bll-rand">Observe in the visited region</button>
+      <button class="bll-reset">Reset</button>
+    </div>
+    <div class="cv"><canvas class="bll-fit"></canvas></div>
+    <div class="cv"><canvas class="bll-ig"></canvas></div>
+    <p class="readout bll-readout">&nbsp;</p>
+    <figcaption>A one-dimensional version with 40 fixed random features. Click the top plot to observe the hidden function (dashed) at that input. Black: posterior mean; grey band: ±2 predictive standard deviations; blue lines: functions drawn from the posterior over the last-layer weights. Bottom: $\tfrac12\log(1 + \phi^\top S \phi)$. In the agent the features are learned as well; here they are frozen so that only the last layer changes.</figcaption>
+  </figure>
+</section>
+
+<section class="col" id="objective">
+  <h2>What the agent wants, and how it decides</h2>
+  <p>So far the agent has a model and knows where it is uncertain. It still needs a task. In active inference the task is a preference over observations, written as a prior $\hat p(y_t) \propto \exp r(y_t)$. For the pendulum, $r$ is high when the observation says the pendulum is upright and flat everywhere else. There is never a preference on the latent state, because the agent learns those coordinates itself and they have no fixed meaning.</p>
+  <p>Active inference treats planning as inference: the agent looks for a belief $q$ about the future (observations, states, actions and parameters) that fits both its model and its preferences. It finds that belief by minimising</p>
+  <div class="eq">$$
+  \begin{aligned}
+  F_{\text{EFE}}[q] = F[q;\hat p]
+  &+ \sum_{t=1}^T \mathrm{H}_q[u_t \mid x_{t-1}] \\
+  &+ \sum_{t=1}^T \Big( 2\,\mathrm{H}_q[y_t \mid x_t, \theta] - \mathrm{H}_q[x_t \mid x_{t-1}, u_t] - \mathrm{H}_q[y_t \mid x_t] \Big).
+  \end{aligned}
+  $$</div>
+  <p>The first term, $F[q;\hat p]$, is the ordinary variational free energy of the model with the preference attached. Minimising it alone would only steer toward preferred observations. The first sum corrects for the entropy of the action posterior, and the second adds the epistemic part of the expected free energy, the part that values information. We derive both corrections in <a href="https://proceedings.mlr.press/v337/nuijten26a.html">What Type of Inference Is Active Inference?</a> (UAI 2026).</p>
+  <p>We restrict $q$ to the family</p>
+  <div class="eq">$$
+  q(\boldsymbol y, \boldsymbol x, \boldsymbol u, \theta) = q(x_0)\, q(\theta) \prod_{t=1}^{T} p(y_t \mid x_t, \theta)\, p(x_t \mid x_{t-1}, u_t, \theta)\, q(u_t \mid x_{t-1}).
+  $$</div>
+  <p>The beliefs about the current state and the weights come from the agent's filter and from learning, and they stay fixed while it plans. The transitions and observations are copied from the model. Only the action posterior $q(u_t \mid x_{t-1})$ is free, so planning means choosing a distribution over actions, and the actions may depend on the state.</p>
+  <details>
+    <summary>Why the transitions are held at the model</summary>
+    <p>If the transition factor were free, inference would move probability toward the preferred states, and the agent would favour plans in which luck carries it to the goal. <a href="https://arxiv.org/abs/1805.00909">Levine (2018), Reinforcement Learning and Control as Probabilistic Inference</a>, discusses this optimism of planning as inference. Transition noise is a property of the environment that planning cannot change, so the agent's belief about transitions has to be its transition model.</p>
+  </details>
+  <p>In this family the action entropy cancels, and $F_{\text{EFE}}$ becomes a sum of expected costs per step. The two entropy terms that remain are exactly the information gains from the previous section:</p>
+  <div class="eq">$$
+  \ell_t = \htmlClass{t-pref}{-\log \hat p(y_t)}
+  \;\htmlClass{t-dyn}{-\; \mathrm{I}(x_t; \theta \mid x_{t-1}, u_t)}
+  \;\htmlClass{t-obs}{-\; \mathrm{I}(y_t; \theta \mid x_t)}
+  \;+\; \text{const}.
+  $$</div>
+  <p class="legend"><span class="sw pref"></span>preference <span class="sw dyn"></span>information gain about the dynamics <span class="sw obs"></span>information gain about the observation model</p>
+  <p>The cost of a step is low when the predicted observation is preferred, and lower still when the step would teach the model something, about how the system moves or about what the sensors report. When the goal is out of reach, the first term is the same for every plan, and the information gains are the only thing that tells plans apart. That is what makes the agent explore. The information gains have no weight in front of them, so the model's own uncertainty decides how much exploration is worth. As the model learns, they shrink, and the preference takes over.</p>
+</section>
+
+<section class="col" id="heatmap">
+  <h2>Where the agent is uncertain</h2>
+  <p>To see what the information gain does in practice, we can map it over the pendulum's states while the agent learns. There is one complication. The agent plans in a latent space that it learns itself, whose coordinates have no fixed meaning and change every time the model is retrained, so maps drawn in them could not be compared across episodes. We draw the maps over the pendulum's true state instead: its angle $\theta$ and angular velocity $\omega$. (In this section and the next, $\theta$ is the angle, not the model's weights.) For each grid point we take the noise-free observation $y = (\cos\theta, \sin\theta, \omega/8)$, let the agent's encoder map it to a latent state $x$, and evaluate the information gain at that $x$, maximised over the torque for the dynamics. Since $y$ is a one-to-one function of $(\theta, \omega)$, this is the same as a map over observation space.</p>
+  <p>Move the slider to see how the map changes as the agent collects data. Before any data the information gain is high everywhere. After one episode it is lower on the states the agent has visited (median 0.04 nats) than away from them (median 0.11 nats over the grid). The highest values are at large angular velocities. The agent goes there next, and in doing so pumps energy into the pendulum.</p>
+  <figure class="widget wide" id="hm-widget">
+    <div class="controls">
+      <button data-map="dyn">dynamics</button><button data-map="nov">observation model</button><button data-map="pref">−log p̂</button>
+    </div>
+    <div class="controls">
+      <span class="lab">episode</span>
+      <input type="range" class="hm-ep" min="0" max="10" step="1" value="1" aria-label="episodes of data">
+      <span class="hm-eplab lab fixed"></span>
+    </div>
+    <div class="cv"><canvas></canvas></div>
+    <div class="hm-colorbar colorbar"></div>
+    <p class="readout hm-readout">&nbsp;</p>
+    <figcaption>Pendulum. Axes: the true state; colour: the information gain at the latent state the agent assigns to it. White dots: states visited in the episodes so far. Orange: the next 100 steps the agent takes with exactly this model. The preference ($-\log\hat p$) is fixed: it does not change with learning, and it is flat everywhere except near upright.</figcaption>
+  </figure>
+</section>
+
+<section class="col" id="planning">
+  <h2>Planning by gradient descent</h2>
+  <p>$F_{\text{EFE}}$ is an expectation over futures that the agent imagines with its model. The model is nonlinear, and all steps of one imagined future share the same uncertain parameters, so the expectation has no closed form. The agent estimates it instead: it simulates 16 rollouts with its model, scores them, and lowers the estimate by gradient descent on the parameters of the action posterior. That posterior is a Gaussian squashed into the action limits, whose mean reacts linearly to the state of each rollout,</p>
+  <div class="eq">$$
+  z_t = \mu_t + K_t (x_{t-1} - \bar x_{t-1}) + \sigma_t \varepsilon_t, \qquad \varepsilon_t \sim \mathcal N(0, I), \qquad u_t = u_{\max} \tanh z_t,
+  $$</div>
+  <p>with parameters $\lambda = \{\mu_t, K_t, \rho_t\}_{t=1}^{T}$ and $\sigma_t = \sigma_{\max}\,\mathrm{sigmoid}(\rho_t)$. To get a gradient through the samples, the agent uses the reparameterisation trick. All randomness is drawn from fixed distributions that do not depend on $\lambda$, and $\lambda$ only transforms it, so every simulated quantity is a differentiable function of $\lambda$ and backpropagation through the rollouts gives an unbiased gradient of $F_{\text{EFE}}$.</p>
+  <p>The figure steps through planning on the pendulum, recorded from the agent. There are three situations to choose from. Exploring: early in learning, the goal is out of reach and only the information gain shapes the plan. Near the goal: a trained model partway through a swing-up, where the preference dominates. Longer horizon: a plan long enough to reach the goal from rest, where you can watch the preference take over within one planning call.</p>
+
+  <figure class="widget wide" id="pl-widget">
+    <div class="controls">
+      <button data-moment="explore" class="on">Exploring: start of episode 4</button>
+      <button data-moment="exploit">Near the goal: episode 11, step 33</button>
+      <button data-moment="reach">Longer horizon: reaching the goal from rest</button>
+    </div>
+    <div class="stages">
+      <button data-stage="0">1 sample</button><button data-stage="1">2 shift &amp; scale</button><button data-stage="2">3 squash</button><button data-stage="3">4 roll out</button><button data-stage="4">5 score</button><button data-stage="5">6 differentiate</button><button data-stage="6">7 update</button><button data-stage="7">act</button>
+    </div>
+    <div class="grid2">
+      <div><div class="pl-pend-spacer"></div><div class="cv"><canvas class="pl-action"></canvas></div></div>
+      <div><div class="pl-pend"></div><div class="cv"><canvas class="pl-phase"></canvas></div></div>
+    </div>
+    <div class="caption-box">
+      <p data-caption="sample">Draw standard normal noise $\varepsilon_t^{(n)}$ for 16 rollouts and 40 steps. Because the noise does not depend on $\lambda$, the gradient can pass through the samples.</p>
+      <p data-caption="transform">Shift and scale: $\mu_t + \sigma_t \varepsilon_t$, then the feedback term $K_t(x_{t-1} - \bar x_{t-1})$, which depends on each rollout's own state. In the agent this happens step by step inside the rollout; it is drawn here in one go. Black: $\mu_t$, band: $\pm\sigma_t$.</p>
+      <p data-caption="squash">$u_t = u_{\max}\tanh z_t$ keeps every action inside the torque limit $[-2, 2]$ (shaded).</p>
+      <p data-caption="rollout">Each rollout draws its own $x_0 \sim q(x_0)$ and one $\theta \sim q(\theta)$ for the whole horizon, then $x_t \sim p(x_t \mid x_{t-1}, u_t, \theta)$ and $y_t \sim p(y_t \mid x_t, \theta)$. Right: the imagined angle and velocity, decoded from the imagined observations $y_t$, drawn over the information gain about the dynamics of this model (the map from the previous figure, in the same true-state coordinates). Orange dot: the true state. Dashed: the goal region.</p>
+      <p data-caption="score-explore">Each step of each rollout gets its cost $\ell_t$ in closed form. Here no rollout comes near upright, so the preference term is the same for all of them (about 276 nats) and gives no gradient. Rollouts differ only in how much they would teach the model. Thick lines: low cost. Hover the bars to pick out a rollout.</p>
+      <p data-caption="score-exploit">Each step of each rollout gets its cost $\ell_t$ in closed form. Now part of the rollouts pass through the goal region. The preference term differs between rollouts by tens of nats and the information gain by a few nats, so the preference dominates. Thick lines: low cost. Hover the bars to pick out a rollout.</p>
+      <p data-caption="score-reach">Each step of each rollout gets its cost $\ell_t$ in closed form. With the longer horizon, the plan can reach upright from rest. At first no rollout gets there and the preference is flat, so the information gain shapes the early steps. Once some rollouts enter the goal region, the preference term separates them; after 100 steps 14 of the 16 rollouts reach the goal and the summed $-\log\hat p$ (dashed, bottom right) has fallen.</p>
+      <p data-caption="gradient">Backpropagate $\hat F$ through the rollouts and the world model. Arrows: $-\partial \hat F / \partial \mu_t$, the direction in which each step's mean action moves (scaled to the largest).</p>
+      <p data-caption="update">One Adam step on $\lambda$ (learning rate 0.05). The next iteration draws fresh noise. Use "run all steps" to play the remaining iterations.</p>
+      <p data-caption="run">Running every Adam step: fresh noise, rollouts, score, gradient, update. Watch the mean action (black) and the rollouts (right) change while the estimate of $F_{\text{EFE}}$ falls (bottom right). Press "next stage" to stop.</p>
+      <p data-caption="act">The agent executes the mode of $q(u_1 \mid x_0)$ (with the $\tanh$ the mode is not $u_{\max}\tanh\mu_1$; the agent finds it by Newton's method). It then observes, updates its belief about the state, and shifts the plan by one step, appending a fresh factor at the end. The shifted plan is the starting point for the next environment step.</p>
+    </div>
+    <div class="controls">
+      <button class="pl-next primary">Next stage</button>
+      <button class="pl-run">Run all steps</button>
+      <button class="pl-restart">Restart</button>
+      <input type="range" class="pl-iter" min="0" max="100" value="0" aria-label="Adam step">
+      <span class="pl-iterlab lab"></span>
+    </div>
+    <div class="grid2">
+      <div><div class="cv"><canvas class="pl-bars"></canvas></div><p class="readout pl-Fhat">&nbsp;</p></div>
+      <div><div class="cv"><canvas class="pl-F"></canvas></div></div>
+    </div>
+    <figcaption>Recorded from the agent on the pendulum. Exploring: at the reset of episode 4, 100 Adam steps from $\mu = 0$, $K = 0$ with the model learned in three episodes. Near the goal: the model after 10 episodes, frozen, in a new episode; at step 33 the agent takes 10 Adam steps from its previous plan, shifted by one step. Longer horizon: a demonstration setting that the agent itself does not use. The same model and planner at the reset of episode 11, with horizon $T = 60$ instead of 40, so that rollouts from rest can reach upright (the swing-up takes about 45 steps); 100 Adam steps from $\mu = 0$, $K = 0$.</figcaption>
+  </figure>
+</section>
+
+<section class="col" id="loop">
+  <h2>The learning loop</h2>
+  <p>Planning is one half of the agent. The other half learns the model, and the two run on different clocks: planning at every step, learning every 100 steps.</p>
+  <figure class="diagram">
+    <svg class="dg-wide" viewBox="0 0 680 250" role="img" aria-label="The agent's loop: every step it filters, plans and acts; every 100 steps it refits the model">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)"/></marker></defs>
+      <text x="20" y="22" class="dg-h">every environment step</text>
+      <rect x="20" y="34" width="150" height="62" rx="6" class="dg-box"/>
+      <text x="95" y="58" class="dg-t">observe yₜ</text><text x="95" y="78" class="dg-s">filter: belief q(xₜ)</text>
+      <rect x="225" y="34" width="190" height="62" rx="6" class="dg-box dg-plan"/>
+      <text x="320" y="58" class="dg-t">plan</text><text x="320" y="78" class="dg-s">10 Adam steps on F<tspan dy="3" font-size="9">EFE</tspan></text>
+      <rect x="470" y="34" width="190" height="62" rx="6" class="dg-box"/>
+      <text x="565" y="58" class="dg-t">act</text><text x="565" y="78" class="dg-s">mode of q(u₁ | x₀), shift plan</text>
+      <path d="M170,65 L222,65" class="dg-a" marker-end="url(#ah)"/><path d="M415,65 L467,65" class="dg-a" marker-end="url(#ah)"/>
+      <path d="M565,96 C565,124 95,124 95,99" class="dg-a" marker-end="url(#ah)"/>
+      <text x="20" y="160" class="dg-h">every 100 steps, and at the end of an episode</text>
+      <rect x="20" y="172" width="200" height="62" rx="6" class="dg-box dg-learn"/>
+      <text x="120" y="196" class="dg-t">fit networks</text><text x="120" y="216" class="dg-s">250 Adam steps on the ELBO</text>
+      <rect x="250" y="172" width="200" height="62" rx="6" class="dg-box dg-learn"/>
+      <text x="350" y="196" class="dg-t">set q(θ) exactly</text><text x="350" y="216" class="dg-s">and the noise covariances</text>
+      <rect x="480" y="172" width="180" height="62" rx="6" class="dg-box dg-learn"/>
+      <text x="570" y="196" class="dg-t">re-filter</text><text x="570" y="216" class="dg-s">the episode so far</text>
+      <path d="M220,203 L247,203" class="dg-a" marker-end="url(#ah)"/><path d="M450,203 L477,203" class="dg-a" marker-end="url(#ah)"/>
+    </svg>
+    <svg class="dg-narrow" viewBox="0 0 300 458" role="img" aria-label="The agent's loop: every step it filters, plans and acts; every 100 steps it refits the model"><defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink-2)"/></marker></defs><text x="10" y="16" class="dg-h">every environment step</text><rect x="10" y="26" width="240" height="52" rx="6" class="dg-box "/><text x="130" y="48" class="dg-t">observe yₜ</text><text x="130" y="66" class="dg-s">filter: belief q(xₜ)</text><rect x="10" y="96" width="240" height="52" rx="6" class="dg-box dg-plan"/><text x="130" y="118" class="dg-t">plan</text><text x="130" y="136" class="dg-s">10 Adam steps on F<tspan dy="3" font-size="9">EFE</tspan></text><rect x="10" y="166" width="240" height="52" rx="6" class="dg-box "/><text x="130" y="188" class="dg-t">act</text><text x="130" y="206" class="dg-s">mode of q(u₁ | x₀), shift plan</text><path d="M130,78 L130,93" class="dg-a" marker-end="url(#ah2)"/><path d="M130,148 L130,163" class="dg-a" marker-end="url(#ah2)"/><path d="M250,192.0 C290,192.0 290,52.0 253,52.0" class="dg-a" marker-end="url(#ah2)"/><text x="10" y="250" class="dg-h">every 100 steps, and at episode end</text><rect x="10" y="260" width="240" height="52" rx="6" class="dg-box dg-learn"/><text x="130" y="282" class="dg-t">fit networks</text><text x="130" y="300" class="dg-s">250 Adam steps on the ELBO</text><rect x="10" y="330" width="240" height="52" rx="6" class="dg-box dg-learn"/><text x="130" y="352" class="dg-t">set q(θ) exactly</text><text x="130" y="370" class="dg-s">and the noise covariances</text><rect x="10" y="400" width="240" height="52" rx="6" class="dg-box dg-learn"/><text x="130" y="422" class="dg-t">re-filter</text><text x="130" y="440" class="dg-s">the episode so far</text><path d="M130,312 L130,327" class="dg-a" marker-end="url(#ah2)"/><path d="M130,382 L130,397" class="dg-a" marker-end="url(#ah2)"/></svg>
+  </figure>
+  <p>At every environment step the agent updates its belief about the current latent state with an amortised filter, a network that maps the previous state sample, the action and the new observation to a Gaussian over the new state. It then takes 10 Adam steps on the plan (100 at the start of an episode), executes the first action and shifts the plan by one step.</p>
+  <p>Every 100 steps it stops to learn. It trains the feature networks $\phi$ and $\psi$ and the filter for 250 Adam steps on the evidence lower bound of all data collected so far, cut into sequences of 50 steps. Because the last layer is conjugate, it then sets $q(\theta)$ and the noise covariances to their optimal values for the trained features, in closed form. Finally it re-runs the filter over the current episode, since the encoder has changed. Between these updates the model is fixed.</p>
+  <p>Separating learning from planning is standard in model-based control and robotics. What makes this loop clunky is how the model learns. The agent keeps every transition it has seen, and every 100 steps it refits all networks and the filter on that whole data set and recomputes $q(\theta)$ over all of it. Nothing is updated from the new observations alone, so each update is a full retraining of the model, and a surprising observation reaches the model only at the next one, up to 100 steps later. The schedule (every 100 steps, 250 gradient steps, sequences of 50) is set by hand.</p>
+</section>
+
+
+<footer class="col">
+  <p>Paper: forthcoming on arXiv. Code: to be released.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
