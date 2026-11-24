@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-10-06'
+  last_updated: '2026-11-24'
 papers:
   wCu4lj8AAAAJ:0EnyYjriUFMC:
-    citations: 4
+    citations: 5
     title: A Message Passing Realization of Expected Free Energy Minimization
     year: '2026'
   wCu4lj8AAAAJ:2osOgNQ5qMEC:
@@ -34,19 +34,19 @@ papers:
     title: Online Structure Learning with Dirichlet Processes through Message Passing
     year: '2024'
   wCu4lj8AAAAJ:WF5omc3nYNoC:
-    citations: 1
+    citations: 2
     title: Active Inference is a Subtype of Variational Inference
     year: '2025'
   wCu4lj8AAAAJ:YOwf2qJgpHMC:
     citations: 0
-    title: A Factor Graph Approach to Scalable Multi-Output Gaussian Process Regression
+    title: A factor graph approach to scalable multi-output Gaussian process regression
     year: '2026'
   wCu4lj8AAAAJ:Zph67rFs4hoC:
     citations: 0
     title: Finding the outliers in scanpath data
     year: Unknown Year
   wCu4lj8AAAAJ:_FxGoFyzp5QC:
-    citations: 1
+    citations: 2
     title: The Quotient Bayesian Learning Rule
     year: '2026'
   wCu4lj8AAAAJ:d1gkVwhDpl0C:
@@ -54,11 +54,11 @@ papers:
     title: Parameterizing Markov Networks using Graph Neural Networks for Trackster Pruning at the CERN CMS High-Granularity Calorimeter
     year: '2022'
   wCu4lj8AAAAJ:hqOjcs7Dif8C:
-    citations: 0
+    citations: 1
     title: What Type of Inference is Active Inference?
     year: '2026'
   wCu4lj8AAAAJ:kNdYIx-mwKoC:
-    citations: 2
+    citations: 3
     title: Expected Free Energy-based Planning as Variational Inference
     year: '2026'
   wCu4lj8AAAAJ:qjMakFHDy7sC:
